@@ -78,11 +78,19 @@ public class ArtikelHinzufuegenServlet extends HttpServlet {
 		}	
 		
 		if(!artikelVorhanden) {
-		//Bild holen und in ArtikelBean schreiben
+		//Bild holen und Name holen
 		Part filePart = request.getPart("artikelBild");
 		InputStream inputStream = null;
 		inputStream = filePart.getInputStream();
-		artikelBean.setBildName(Paths.get(filePart.getSubmittedFileName()).getFileName().toString());
+		String bildName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+		
+		// .jpg von Bildname entfernen
+		if (bildName.indexOf(".") > 0) {
+			   bildName = bildName.substring(0, bildName.lastIndexOf("."));
+		}
+		
+		// Bild und Name in artikelBean schreiben
+		artikelBean.setBildName(bildName);
 		
 		//Hole KategorieId
 		try(Connection con = ds.getConnection();
