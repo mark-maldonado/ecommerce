@@ -3,7 +3,7 @@
 package de.thi.shop.artikel.beans;
 
 import java.io.Serializable;
-
+ 
 public class ArtikelBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
