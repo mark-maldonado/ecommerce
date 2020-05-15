@@ -22,7 +22,7 @@
 	
 	<!-- testen ob Admin angemeldet ist -->
 	<c:if test="${sessionScope.isAdmin }">
-		<a href="../admin/kategorie_entfernen.jsp">Kategorie entfernen</a>
+		<a href="../kategorieentfernenservlet">Kategorie entfernen</a>
 		<a href="../admin/kategorie_hinzu.jsp">Kategorie hinzufügen</a>
 		<a href="../artikelhinzuservlet">Artikel hinzufügen</a>
 	</c:if>
