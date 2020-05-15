@@ -22,7 +22,7 @@
 <!-- Text -->
 <section>
 	
-	<h2>Artikel ${param.artikelName} wurde erfolgreich hinzugefügt!</h2>
+	<h2>Artikel ${artikelBean.artikelName} wurde erfolgreich hinzugefügt!</h2>
 
 </section>
 
