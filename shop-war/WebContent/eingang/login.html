@@ -1,0 +1,48 @@
+<!-- CREATED BY SEYIT ARAR -->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0;" />
+<base href="/shop-war/eingang/login.html" />
+<title>Login</title>
+</head>
+
+<body>
+<!-- Logo -->
+
+<header>
+	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
+</header>
+
+<!-- Login Formular -->
+
+	<form method="post" action="../anmeldenservlet">
+		<fieldset><legend>Login</legend>
+	
+		<div>
+			<label for="email_id">E-Mail:</label>
+			<input type="email" name="email" id="email_id" placeholder="Ihre-Email-Adresse" required>
+		</div>
+    
+		<div>
+			<label for="password_id">Passwort:</label>
+			<input type="password" name="password" id="password_id" placeholder="Ihr-Passwort" required>
+		</div>
+	
+		<div>
+			<button type="submit">Einloggen</button>
+			<button type="reset" >Reset</button>
+			
+			<a href="registrierung.html">Registrieren</a>
+		</div>
+	 	</fieldset> 
+	</form>
+
+<footer>
+		Copyright: Seyit Arar und Joan Mark Maldonado Llopart, Ingolstadt
+</footer>
+
+</body>
+</html>
