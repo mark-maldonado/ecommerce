@@ -55,7 +55,7 @@
 			</div>
 			<!-- Artikel Bearbeiten Knopf -->
 			<c:if test="${sessionScope.isAdmin }">
-				<a href="../atikelbearbeitenservlet?id=${artikel.id }">Artikel bearbeiten</a>
+				<a href="../artikelbearbeitenservlet?id=${artikel.id }">Artikel bearbeiten</a>
 			</c:if>
 			<!-- Anzahl in den Einkaufwagen -->
 			<form method="get" action="../einkaufswagenhinzuservlet?artikelId=${artikel.id }name=${artikel.name },preis=${artikel.preis },bildName=${artikel.bildName },kategorieId=${artikel.kategorieId },kategorieName=${artikel.kategorieName }">
