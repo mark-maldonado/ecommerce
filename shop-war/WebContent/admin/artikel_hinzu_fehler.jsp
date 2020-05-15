@@ -16,7 +16,7 @@
 <header>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
 	<h1>Artikel hinzufügen</h1>
-	<a href="../hauptseiteservlet">zurrück</a>
+	<a href="../hauptseiteservlet">zurück zur Hauptseite</a>
 </header>
 
 <!-- Text -->

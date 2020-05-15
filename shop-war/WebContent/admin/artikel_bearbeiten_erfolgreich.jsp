@@ -16,7 +16,7 @@
 <header>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
 	<h1>Artikel bearbeiten</h1>
-	<a href="../hauptseite/hauptseite.jsp">zurrück</a>
+	<a href="../hauptseiteservlet">zurück zur Hauptseite</a>
 </header>
 
 <!-- Text -->

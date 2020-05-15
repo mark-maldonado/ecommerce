@@ -18,7 +18,7 @@
 <header>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
 	<h1>Fehlerausgabe</h1>
-	<a href="../hauptseite/hauptseite.jsp">zur Startseite</a>
+	<a href="../hauptseiteservlet">zurück zur Hauptseite</a>
 </header>
 
 <!-- Fehlerausgabe -->
