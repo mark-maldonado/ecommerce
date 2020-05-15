@@ -21,7 +21,7 @@
 
 <!-- Text -->
 <section>
-	<h2>Die Kategorie ${param.kategorieName } wurde erfolgreich hinzugefügt!</h2>
+	<h2>Die Kategorie ${artikelBean.kategorieName } wurde erfolgreich hinzugefügt!</h2>
 </section>
 
 <!-- Footer -->
