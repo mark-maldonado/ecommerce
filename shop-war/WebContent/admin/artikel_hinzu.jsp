@@ -37,7 +37,7 @@
 							<option>${currentKategorie.kategorieName}</option>
 						</c:forEach>
 					</select></p>
-			<p><label for="preis_id">Passwort:</label>
+			<p><label for="preis_id">Preis:</label>
 				<input type="number" name="artikelPreis" id="preis_id" placeholder="Artikel Preis" required></p>
 		</tr>
 	</table>
