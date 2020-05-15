@@ -38,7 +38,7 @@
 						</c:forEach>
 					</select></p>
 			<p><label for="preis_id">Preis:</label>
-				<input type="number" name="artikelPreis" id="preis_id" placeholder="Artikel Preis" required></p>
+				<input type="number" name="artikelPreis" id="preis_id" placeholder="Artikel Preis in Cents" required></p>
 		</tr>
 	</table>
 </section>
