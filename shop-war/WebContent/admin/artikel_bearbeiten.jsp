@@ -27,13 +27,13 @@
 <section>
 	<table>
 		<tr>
-			<th><p><img src="../artikelbildladenservlet?id=${form.id}" alt="${form.bildName}" height="50" width="50"></p>
+			<th><p><img src="../artikelbildladenservlet?id=${artikelBean.id}" alt="${artikelBean.bildName}" height="50" width="50"></p>
 			<p><input type="file" name="artikelBild" id="artikelBild_id" accept="image/*"></p>
 			<th>
 				<label for="artikelId_id">ID:</label>
-					<input type="number" name="artikelId"  id ="artikelId_id" value="${artikelId}" readonly>
+					<input type="number" name="artikelId"  id ="artikelId_id" value="${artikelBean.id}" readonly>
 				 <label for="artikelName_id">Name:</label>
-				 	<input type="text" name="artikelName" id="artikelName_id" value="${artikelName}" required>
+				 	<input type="text" name="artikelName" id="artikelName_id" value="${artikelBean.name}" required>
 				 <p><label for="artikelKategorie_id">Kategorie:</label>
 				 	<select name="artikelKategorie" id="artikelKategorie_id" >
 				 		<option>${artikelKategorie}</option>
@@ -42,10 +42,10 @@
 							</c:forEach>
 					</select></p>
 				<p><label for="artikelPreis_id">Preis:</label>
-					<input type="number" name="artikelPreis" id="artikelPreis_id" value="${artikelPreis}" required></p>
+					<input type="number" name="artikelPreis" id="artikelPreis_id" value="${artikelBean.preis}" required></p>
 			</th>
 			<th>
-				<a href="../artikelentfernenservlet?artikelId=${artikelId}">Entfernen</a>
+				<a href="../artikelentfernenservlet?artikelId=${artikelBean.id}">Entfernen</a>
 				<button type="submit" >Aktualisieren</button>
 				
 			</th>	 
