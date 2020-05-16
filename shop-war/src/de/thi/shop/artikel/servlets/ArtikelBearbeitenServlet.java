@@ -72,10 +72,7 @@ public class ArtikelBearbeitenServlet extends HttpServlet {
 		
 		//Gebe Attribute an artikel_bearbeiten.jsp weiter
 		request.setAttribute("kategorien", kategorien);					
-		request.setAttribute("artikelName", artikelName);
-		request.setAttribute("artikelPreis", artikelPreis);
-		request.setAttribute("artikelId", artikelId);
-		request.setAttribute("artikelKategorie", kategorieName);
+		request.setAttribute("artikelBean", artikelBean);
 		
 		final RequestDispatcher disp = request.getRequestDispatcher("/admin/artikel_bearbeiten.jsp");
 		disp.forward(request, response);
