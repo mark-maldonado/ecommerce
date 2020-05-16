@@ -13,16 +13,16 @@
 <body>
 
 <!-- Kopfzeile -->
-<header>
+<nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
 	<h1>Kategorie Entfernen</h1>
 	<a href="../hauptseite/hauptseite.jsp">zurück</a>
-</header>
+</nav>
 
 <!-- Text -->
-<section>
+<main>
 	<h2>Die Kategorie ${form.kategorieName } wurde erfolgreich entfernt!</h2>
-</section>
+</main>
 
 <!-- Footer -->
 <%@ include file="../jspfs/footer.jspf" %>

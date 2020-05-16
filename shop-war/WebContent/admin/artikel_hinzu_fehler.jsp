@@ -20,9 +20,9 @@
 </header>
 
 <!-- Text -->
-<section>
+<main>
 	<h2>Artikel schon vorhanden!</h2>
-</section>
+</main>
 
 <!-- Footer -->
 <%@ include file="../jspfs/footer.jspf" %>

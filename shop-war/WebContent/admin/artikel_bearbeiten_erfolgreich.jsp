@@ -13,16 +13,16 @@
 <body>
 
 <!-- Kopfzeile -->
-<header>
+<nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
 	<h1>Artikel bearbeiten</h1>
 	<a href="../hauptseiteservlet">zurück zur Hauptseite</a>
-</header>
+</nav>
 
 <!-- Text -->
-<section>
+<main>
 	<h2>Artikel erfolgreich bearbeitet!</h2>
-</section>
+</main>
 
 <!-- Footer -->
 <%@ include file="../jspfs/footer.jspf" %>

@@ -13,18 +13,18 @@
 <body>
 
 <!-- Kopfzeile -->
-<header>
+<nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
 	<h1><!-- Name der rechts neben dem Logo steht --></h1>
 	<a href="../hauptseiteservlet">zurück zur Hauptseite</a>
-</header>
+</nav>
 
 <!-- Text -->
-<section>
+<main>
 	
 	<h2>Danke für Ihren Einkauf!</h2>
     <h3>Ihre Bestellung wird Ihnen so schnell wie möglich zugesandt.</h3>
-</section>
+</main>
 
 <!-- Footer -->
 <%@ include file="../jspfs/footer.jspf" %>

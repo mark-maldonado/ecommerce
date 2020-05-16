@@ -14,7 +14,7 @@
 <body>
 
 <!-- Kopfzeile -->
-<header>
+<nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
 	<h1>Hauptseite</h1>
 	<a href="../abmeldenservlet">abmelden</a>
@@ -26,8 +26,9 @@
 		<a href="../admin/kategorie_hinzu.jsp">Kategorie hinzufügen</a>
 		<a href="../artikelhinzuservlet">Artikel hinzufügen</a>
 	</c:if>
-</header>
+</nav>
 
+<main>
 <!-- Suchfunktion -->
 <section>
 	<form method="get" action="../hauptseiteservlet">
@@ -75,6 +76,7 @@
 		<h2>Es wurden keine Artikel für Ihren Suchbegriff gefunden.</h2>
 	</c:if>
 </section>
+</main>
 
 <!-- Footer -->
 <%@ include file="../jspfs/footer.jspf" %>

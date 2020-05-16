@@ -15,26 +15,30 @@
 <body>
 
 <!-- Kopfzeile -->
-<header>
+<nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
-	<h1><!-- Name der rechts neben dem Logo steht --></h1>
+	<h1>Kategorie entfernen</h1>
 	<a href="../hauptseiteservlet">zurück</a>
-</header>
+</nav>
 
 <!-- Text -->
-<form method="post" action="../kategorieloeschenservlet">
-	<section>
-		<label for="kategorieName_id">Kategorie:</label>
-			<select name="kategorieName" id="kategorieName_id">
-				<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
-					<option>${currentKategorie.kategorieName}</option>
-				</c:forEach>
-			</select>
-	</section>
-	<section>
-		<button type="submit">Entfernen</button>
-	</section>
-</form>
+<main>
+	<form method="post" action="../kategorieloeschenservlet">
+		<fieldset><legend>Kategorie entfernen</legend>
+			<div>
+				<label for="kategorieName_id">Kategorie:</label>
+				<select name="kategorieName" id="kategorieName_id">
+					<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
+						<option>${currentKategorie.kategorieName}</option>
+					</c:forEach>
+				</select>
+			</div>
+			<div>
+				<button type="submit">Entfernen</button>
+			</div>
+		</fieldset>
+	</form>
+</main>
 
 <!-- Footer -->
 <%@ include file="../jspfs/footer.jspf" %>

@@ -18,14 +18,14 @@
 </header>
 
 <!-- Text -->
-<section>
+<main>
 	<h1>Registrierungsfehler</h1>
 	<h2>Leider war die Registrierung nicht möglich. Die angegebene E-Mail Adresse ist bereits registriert.</h2>
 	<div>
 		 <a href="login.html">Login</a>
 		 <a href="registrierung.html">Registrieren</a>
 	</div>
-</section>
+</main>
 
 <!-- Footer -->
 <%@ include file="../jspfs/footer.jspf" %>

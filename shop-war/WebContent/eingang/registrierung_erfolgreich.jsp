@@ -19,11 +19,10 @@
 </header>
 
 <!-- Text -->
-<section>
-	
+<main>
 	<h2>Ihre Registrierung war erfolgreich!</h2>
 	<a href="login.html" title="zum_Login">Zurück zum Login</a></p>
-</section>
+</main>
 
 <!-- Footer -->
 <%@ include file="../jspfs/footer.jspf" %>

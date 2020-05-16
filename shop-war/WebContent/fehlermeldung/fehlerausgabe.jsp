@@ -15,14 +15,14 @@
 <body>
 
 <!-- Kopfzeile -->
-<header>
+<nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
 	<h1>Fehlerausgabe</h1>
 	<a href="../hauptseiteservlet">zurück zur Hauptseite</a>
-</header>
+</nav>
 
 <!-- Fehlerausgabe -->
-<section>
+<main>
 	<h2>Es ist ein Fehler aufgetreten!</h2>
 	<br>Bitte benachrichtigen Sie den Web-Administrator unter <b>admin@shop-war.org</b>.
 	<br>Die Fehlermeldung lautet: ${pageContext.exception}
@@ -31,7 +31,7 @@
 			<br>${trace}
 		</c:forEach>
 	</p>
-</section>
+</main>
 	
 <!-- Footer -->
 <%@ include file="../jspfs/footer.jspf" %>

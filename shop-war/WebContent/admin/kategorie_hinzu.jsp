@@ -13,22 +13,26 @@
 <body>
 
 <!-- Kopfzeile -->
-<header>
+<nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
-	<h1><!-- Name der rechts neben dem Logo steht --></h1>
+	<h1>Kategorie hinzufügen</h1>
 	<a href="../hauptseiteservlet">zurück</a>
-</header>
+</nav>
 
 <!-- Text -->
-<form method="post" action="../kategoriehinzufuegenservlet">
-<section>
-	<label for="kategorieId">Kategorie-Name:</label>
-	<input type="text" name="kategorieName" id="kategorieId" placeholder="Kategorie-Name" required></th>
-</section>
-<section>
-	<button type="submit">Hinzufügen</button>
-</section>
-</form>
+<main>
+	<form method="post" action="../kategoriehinzufuegenservlet">
+		<fieldset><legend>Kategorie hinzufügen</legend>
+			<div>
+				<label for="kategorieId">Kategorie-Name:</label>
+				<input type="text" name="kategorieName" id="kategorieId" placeholder="Kategorie-Name" required></th>
+			</div>
+			<div>
+				<button type="submit">Hinzufügen</button>
+			</div>
+		</fieldset>
+	</form>
+</main>
 
 <!-- Footer -->
 <%@ include file="../jspfs/footer.jspf" %>
