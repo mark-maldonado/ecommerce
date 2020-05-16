@@ -24,7 +24,7 @@
 
 <!-- Text -->
 <main>
-	<form method="post" action="../kategorieloeschenservlet">
+	<form method="get" action="../kategorieloeschenservlet">
 		<fieldset><legend>Kategorie entfernen</legend>
 			<div>
 				<label for="kategorieName_id">Kategorie:</label>

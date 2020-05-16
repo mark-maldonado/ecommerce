@@ -22,7 +22,7 @@
 
 <!-- Text -->
 <main>
-	<form method="post" action="../kategoriehinzufuegenservlet">
+	<form method="get" action="../kategoriehinzufuegenservlet">
 		<fieldset><legend>Kategorie hinzufügen</legend>
 			<div>
 				<label for="kategorieId">Kategorie-Name:</label>

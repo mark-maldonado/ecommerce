@@ -45,7 +45,7 @@ public class ArtikelAktualisierenServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
 		
@@ -57,7 +57,7 @@ public class ArtikelAktualisierenServlet extends HttpServlet {
 		artikelBean.setPreis(Integer.parseInt(request.getParameter("artikelPreis")));
 		artikelBean.setId(Long.parseLong(request.getParameter("artikelId")));
 		
-		//Handling für das Bild, das hochgeladen wurde
+		//Handling fï¿½r das Bild, das hochgeladen wurde
 		InputStream inputStream = null;
 		Part filePart = request.getPart("artikelBild");
 		inputStream = filePart.getInputStream();
@@ -125,10 +125,7 @@ public class ArtikelAktualisierenServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+
 	
 	
 }

@@ -68,7 +68,7 @@ public class KategorieHinzufuegenServlet extends HttpServlet {
 		if(!vorhanden) {
 		String [] generatedKeys = new String[] {"id"};
 		
-		//in Datenbank einfügen
+		//in Datenbank einfï¿½gen
 		try(Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("INSERT INTO kategorie (name) VALUES (?)", generatedKeys)){
 			
@@ -90,9 +90,4 @@ public class KategorieHinzufuegenServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

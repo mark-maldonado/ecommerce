@@ -43,7 +43,7 @@ public class ArtikelEntfernenServlet extends HttpServlet {
 		//Hole Attribute
 		String artikelId = request.getParameter("artikelId");
 	
-		//Löschen
+		//Lï¿½schen
 			try(Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("DELETE FROM artikel WHERE id = ?")) {
 			
@@ -59,13 +59,6 @@ public class ArtikelEntfernenServlet extends HttpServlet {
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
-	
 	
 	
 

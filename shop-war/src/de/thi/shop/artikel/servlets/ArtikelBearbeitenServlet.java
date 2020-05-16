@@ -44,7 +44,7 @@ public class ArtikelBearbeitenServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println(request.getParameter("name"));
 		
@@ -82,12 +82,7 @@ public class ArtikelBearbeitenServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-	
-	
+		
 	private List<KategorieBean> kategorienHolen(ArtikelBean artikelBean) throws ServletException
 	{
 		List<KategorieBean> kategorien = new ArrayList<KategorieBean>();
@@ -101,7 +96,7 @@ public class ArtikelBearbeitenServlet extends HttpServlet {
 					//Bei jeder gefundenen Kategorie, neuer Eintrag in Liste
 					KategorieBean kategorieBean = new KategorieBean();			
 					String kategorieName = rs.getString("name");    
-					//Überprüfung ob Kategorie vom aktuellen Artikel, damit kein doppelter Eintrag in Liste
+					//ï¿½berprï¿½fung ob Kategorie vom aktuellen Artikel, damit kein doppelter Eintrag in Liste
 						if(kategorieName.equals(artikelBean.getKategorieName())) {
 							//dann nichts
 						}

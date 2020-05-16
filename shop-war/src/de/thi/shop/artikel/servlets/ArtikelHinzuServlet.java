@@ -39,9 +39,9 @@ public class ArtikelHinzuServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		
 		List<KategorieBean> kategorien = new ArrayList<KategorieBean>();
 		
@@ -54,7 +54,7 @@ request.setCharacterEncoding("UTF-8");
 					//Bei jeder gefundenen Kategorie, neuer Eintrag in Liste
 					KategorieBean kategorieBean = new KategorieBean();			
 					String kategorieName = rs.getString("name");    
-					//Überprüfung ob Kategorie vom aktuellen Artikel, damit kein doppelter Eintrag in Liste
+					//ï¿½berprï¿½fung ob Kategorie vom aktuellen Artikel, damit kein doppelter Eintrag in Liste
 					kategorieBean.setKategorieName(kategorieName);
 					kategorien.add(kategorieBean);
 				}
@@ -72,9 +72,5 @@ request.setCharacterEncoding("UTF-8");
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
 
 }
