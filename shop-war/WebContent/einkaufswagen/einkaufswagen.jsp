@@ -19,7 +19,7 @@
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
 	<h1>Einkaufswagen</h1>
 	<a href="../abmeldenservlet">abmelden</a>
-	<a href="../einkaufswagenservlet">zurück zur Hauptseite</a>	
+	<a href="../hauptseiteservlet">zurück zur Hauptseite</a>	
 </nav>
 
 
