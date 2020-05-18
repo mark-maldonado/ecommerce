@@ -63,7 +63,7 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
 					"SELECT * FROM einkaufswagenPosition WHERE idUser LIKE ? AND artikelId = ?")) {
-
+			
 			// PreparedStatement Grundgerüst befüllen
 			pstmt.setLong(1, form.getUserId());
 			pstmt.setLong(2, form.getArtikelId());
@@ -79,7 +79,7 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 			}
 			
 		} catch (Exception ex) {
-			throw new ServletException(ex.getMessage());
+			// Falls nicht vorhanden, nichts machen
 		}
 		
 		// 2 FALLS ARTIKEL BEREITS IM EINKAUFSWAGEN: ARTIKELANZAHL ERHÖHEN 
@@ -100,31 +100,29 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 		}
 				
 		// 3 ARTIKEL IN EINKAUFSWAGEN POSITION SCHREIBEN
-		// Namen der Spalten, die die Keys automatisch generieren
-		String[] generatedKeys = new String[] {"id"};
-		
-		// PreparedStatement für Grundgerüst 
-		// (Ressourcen in runden Klammern nach try um sie im Nachhinein nicht wieder schließen zu müssen)
-		try (Connection con = ds.getConnection();
-			PreparedStatement pstmt = con.prepareStatement(
-					"INSERT INTO einkaufswagenPosition (artikelId,menge,zeitstempel,idUser) VALUES (?,?,?,?)", 
-					generatedKeys)){
-
-			// PreparedStatement Grundgerüst befüllen
-			pstmt.setLong(1, form.getId());
-			pstmt.setInt(2, form.getMenge());
-			pstmt.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
-			pstmt.setLong(4, form.getUserId());
-			pstmt.executeUpdate();
+		else {
+			// Namen der Spalten, die die Keys automatisch generieren
+			String[] generatedKeys = new String[] {"id"};
 			
-			// Generierten Schlüssel in Form schreiben
-			try (ResultSet rs = pstmt.getGeneratedKeys()) {
-				while (rs.next()) {
-					form.setId(rs.getLong(1));
-				}
+			// PreparedStatement für Grundgerüst 
+			// (Ressourcen in runden Klammern nach try um sie im Nachhinein nicht wieder schließen zu müssen)
+			try (Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement(
+						"INSERT INTO einkaufswagenPosition (artikelId,menge,zeitstempel,idUser) VALUES (?,?,?,?)", 
+						generatedKeys)){
+	
+				System.out.println(form.getArtikelId());
+				
+				// PreparedStatement Grundgerüst befüllen
+				pstmt.setLong(1, form.getArtikelId());
+				pstmt.setInt(2, form.getMenge());
+				pstmt.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
+				pstmt.setLong(4, form.getUserId());
+				pstmt.executeUpdate();
+				
+			} catch (Exception ex) {
+				throw new ServletException(ex.getMessage());
 			}
-		} catch (Exception ex) {
-			throw new ServletException(ex.getMessage());
 		}
 	}
 }	
