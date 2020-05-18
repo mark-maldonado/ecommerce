@@ -55,7 +55,6 @@
 			<div>
 				<a href="../artikelentfernenservlet?artikelId=${artikelBean.id}">Entfernen</a>
 				<button type="submit" >Aktualisieren</button>
-				
 			</div>	 
 		</fieldset>
 	</form>
