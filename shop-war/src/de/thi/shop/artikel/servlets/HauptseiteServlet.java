@@ -29,7 +29,7 @@ public class HauptseiteServlet extends HttpServlet {
 	private DataSource ds;
 	
 	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Test ob user angemeldet ist
 		// Session Bean erhalten
 		if (request.getSession(false).getAttribute("userBean") == null) {
