@@ -22,7 +22,6 @@
 
 <!-- Text -->
 <main>
-	
 	<h2>Danke für Ihren Einkauf!</h2>
     <h3>Ihre Bestellung wird Ihnen so schnell wie möglich zugesandt.</h3>
 </main>
