@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,10 +32,14 @@ public class HauptseiteServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Test ob user angemeldet ist
-		// Session Bean erhalten
-		if (request.getSession(false).getAttribute("userBean") == null) {
-			final RequestDispatcher dispatcher = request.getRequestDispatcher("/eingang/login.html");
-			dispatcher.forward(request, response);
+		// Session Bean erhalten		
+		try {
+			if (request.getSession(false).getAttribute("userBean") == null) {
+				final RequestDispatcher dispatcher = request.getRequestDispatcher("/eingang/login.html");
+				dispatcher.forward(request, response);
+			}
+		} 
+		catch (Exception ex) {
 		}
 		
 		// Format der zu lesenden Formulardaten
