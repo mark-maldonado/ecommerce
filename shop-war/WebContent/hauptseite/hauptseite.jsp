@@ -48,7 +48,7 @@
 	<c:forEach var="artikel" items="${alleArtikel}" varStatus="status">
 		<div>
 			<!-- Bild -->
-			<img src="../artikelbildladenservlet?id=${artikel.id }" alt="${artikel.bildName }" height="50" width="50">
+			<img src="../artikelbildladenservlet?id=${artikel.id }" alt="${artikel.bildName }" height="75" width="75">
 			<!-- Information -->
 			<div>
 				<p><b>Name: </b>${artikel.name }</p>
