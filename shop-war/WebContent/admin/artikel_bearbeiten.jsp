@@ -42,9 +42,9 @@
 			<div>
 				<label for="artikelKategorie_id">Kategorie:</label>
 			 	<select name="artikelKategorie" id="artikelKategorie_id" >
-			 		<option>${artikelKategorie}</option>
+			 		<option value="${artikelKategorie}" selected>${artikelKategorie}</option>
 						<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
-							<option>${currentKategorie.kategorieName}</option>
+							<option value="${currentKategorie.kategorieName}">${currentKategorie.kategorieName}</option>
 						</c:forEach>
 				</select>
 			</div>
