@@ -46,18 +46,13 @@ public class ArtikelBearbeitenServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println(request.getParameter("name"));
-		
 		request.setCharacterEncoding("UTF-8");
 	
 		//Attribute holen
 		String artikelName = request.getParameter("name");
 		Long artikelId = Long.valueOf(request.getParameter("id"));
-		System.out.println(artikelId);
 		int artikelPreis = Integer.parseInt(request.getParameter("preis"));
 		String kategorieName = request.getParameter("kategorie");
-		
-		System.out.println("2");
 		
 		ArtikelBean artikelBean = new ArtikelBean();
 		
