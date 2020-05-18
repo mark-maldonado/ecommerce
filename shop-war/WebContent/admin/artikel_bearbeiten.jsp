@@ -42,7 +42,7 @@
 			<div>
 				<label for="artikelKategorie_id">Kategorie:</label>
 			 	<select name="artikelKategorie" id="artikelKategorie_id" >
-			 		<option value="${artikelKategorie}" selected>${artikelKategorie}</option>
+			 		<option value="${artikelBean.kategorieName}" selected>${artikelBean.kategorieName}</option>
 						<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 							<option value="${currentKategorie.kategorieName}">${currentKategorie.kategorieName}</option>
 						</c:forEach>
