@@ -62,12 +62,20 @@
 				</div>
 			</c:if>
 			<!-- Anzahl in den Einkaufwagen -->
-			<form method="get" action="../einkaufswagenhinzuservlet?artikelId=${artikel.id }&name=${artikel.name }&preis=${artikel.preis }&bildName=${artikel.bildName }&kategorieId=${artikel.kategorieId }&kategorieName=${artikel.kategorieName }">
+			<form method="get" action="../einkaufswagenhinzuservlet">
 				<fieldset><legend>Artikel Suchen</legend>
 					<div>
+						<!-- Übergabewerte in Form schreiben -->
+						<input type="hidden" name="artikelId" value="${artikel.id }">
+						<input type="hidden" name="name" value="${artikel.name }">
+						<input type="hidden" name="preis" value="${artikel.preis }">
+						<input type="hidden" name="bildName" value="${artikel.bildName }">
+						<input type="hidden" name="kategorieId" value="${artikel.kategorieId }">
+						<input type="hidden" name="kategorieName" value="${artikel.kategorieName }">
+						<!-- Input Wert -->
 					  <label for="menge_id">Menge:</label>
 					  <input type="number" name="menge" id="menge_id" value="1">
-					  <button name="submit" type="submit">In den Einkaufswagen</button>
+					  <button type="submit">In den Einkaufswagen</button>
 					</div>
 				</fieldset>
 			</form>
