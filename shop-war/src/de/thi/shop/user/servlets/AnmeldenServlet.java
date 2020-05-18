@@ -69,12 +69,14 @@ public class AnmeldenServlet extends HttpServlet {
 				session.setAttribute("userBean", userBean);
 				session.setAttribute("isAdmin", isAdmin);
 				
-				final RequestDispatcher disp = request.getRequestDispatcher("/hauptseiteservlet");
-				disp.forward(request, response);
+				//final RequestDispatcher disp = request.getRequestDispatcher("/hauptseiteservlet");
+				//disp.forward(request, response);
+				response.sendRedirect("hauptseiteservlet");
 			}
 			else {
-				final RequestDispatcher disp = request.getRequestDispatcher("eingang/login_fehler.html");
-				disp.forward(request, response);
+				//final RequestDispatcher disp = request.getRequestDispatcher("eingang/login_fehler.html");
+				//disp.forward(request, response);
+				response.sendRedirect("eingang/login_fehler.html");
 				}
 			} catch(Exception ex) {
 			ex.printStackTrace();
