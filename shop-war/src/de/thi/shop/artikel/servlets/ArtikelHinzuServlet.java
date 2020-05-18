@@ -1,3 +1,5 @@
+//CREATED BY SEYIT ARAR
+
 package de.thi.shop.artikel.servlets;
 
 import java.io.IOException;
@@ -68,9 +70,5 @@ public class ArtikelHinzuServlet extends HttpServlet {
 	RequestDispatcher disp = request.getRequestDispatcher("admin/artikel_hinzu.jsp");
 	disp.forward(request, response);
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 
 }
