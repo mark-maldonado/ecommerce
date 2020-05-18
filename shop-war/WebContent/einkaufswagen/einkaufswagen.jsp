@@ -47,7 +47,7 @@
 
 <!-- Gesamtsumme -->
 <section>
-	<p><b>Gesamtsumme: </b>${form.summe }</p>
+	<p><b>Gesamtsumme: </b>${gesamtsumme }</p>
 </section>
 
 <!-- Kaufen Knopf -->
