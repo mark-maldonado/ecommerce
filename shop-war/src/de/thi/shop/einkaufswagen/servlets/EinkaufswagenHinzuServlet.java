@@ -55,7 +55,7 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 		// Scope "Request" (request da Seite nur aufgebaut werden muss)
 		request.setAttribute("form", form);
 		// Redirect weil Daten in die Datenbank geschrieben wird
-		response.sendRedirect("einkaufswagen/einkaufswagen.jsp");
+		response.sendRedirect("einkaufswagenservlet");
 	}
 	
 	private void persist(EinkaufswagenBean form) throws ServletException {
