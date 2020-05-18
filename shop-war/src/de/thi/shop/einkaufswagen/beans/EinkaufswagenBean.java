@@ -11,6 +11,7 @@ public class EinkaufswagenBean implements Serializable {
 	private Long artikelId;
 	private String name;
 	private int preis;
+	private String preisString;
 	private String bildName;
 	private Long kategorieId;
 	private String kategorieName;
@@ -62,6 +63,14 @@ public class EinkaufswagenBean implements Serializable {
 
 	public void setPreis(int preis) {
 		this.preis = preis;
+	}
+	
+	public String getPreisString() {
+		return preisString;
+	}
+	
+	public void setPreisString(String preisString) {
+		this.preisString = preisString;
 	}
 	
 	public String getbildName() {
