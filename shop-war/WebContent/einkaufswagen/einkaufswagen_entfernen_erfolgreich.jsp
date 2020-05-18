@@ -17,12 +17,12 @@
 <nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
 	<h1>Einkaufswagen</h1>
-	<a href="einkaufswagen.jsp">zurück zum Einkaufswagen</a>
+	<a href="einkaufswagenservlet">zurück zum Einkaufswagen</a>
 </nav>
 
 <!-- Text -->
 <main>
-	<h2>Artikel erfolgreich entfernt!</h2>
+	<h2>Artikel ${artikelName } erfolgreich entfernt!</h2>
 </main>
 
 <!-- Footer -->
