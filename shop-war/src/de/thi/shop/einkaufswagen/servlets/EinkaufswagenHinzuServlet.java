@@ -62,7 +62,7 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 		// 1 ÜBERPRÜFEN OB ARTIKEL IM EINKAUFSWAGEN BEREITS VORHANDEN
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
-					"SELECT * FROM einkaufswagenPosition WHERE idUser LIKE ? AND artikelId = ?")) {
+					"SELECT * FROM einkaufswagenPosition WHERE idUser LIKE ? AND artikelId=?")) {
 			
 			// PreparedStatement Grundgerüst befüllen
 			pstmt.setLong(1, form.getUserId());
@@ -86,11 +86,16 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 		if (artikelVorhandenId != null) {
 			try (Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement(
-						"UPDATE einkaufswagenPosition SET menge = ? WHERE id LIKE ?")) {
-
+						"UPDATE einkaufswagenPosition SET menge = ? WHERE id = ?")) {
+					
 				// PreparedStatement Grundgerüst befüllen und Menge ändern
 				pstmt.setLong(1, artikelVorhandenMenge);
 				pstmt.setLong(2, artikelVorhandenId);
+				pstmt.executeUpdate();
+				
+				// Menge zur Übergabe ändern
+				form.setMenge(artikelVorhandenMenge);
+				
 				// Methode verlassen
 				return;
 				
@@ -110,8 +115,6 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 				PreparedStatement pstmt = con.prepareStatement(
 						"INSERT INTO einkaufswagenPosition (artikelId,menge,zeitstempel,idUser) VALUES (?,?,?,?)", 
 						generatedKeys)){
-	
-				System.out.println(form.getArtikelId());
 				
 				// PreparedStatement Grundgerüst befüllen
 				pstmt.setLong(1, form.getArtikelId());
