@@ -44,7 +44,7 @@ public class EinkaufswagenBean implements Serializable {
 		return name;
 	}
 	
-	public void setArtikelId(Long id) {
+	public void setArtikelId(Long artikelId) {
 		this.artikelId = artikelId;
 	}
 	
