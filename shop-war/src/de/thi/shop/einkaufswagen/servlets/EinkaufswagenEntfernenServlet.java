@@ -45,11 +45,12 @@ public class EinkaufswagenEntfernenServlet extends HttpServlet {
 		// (Ressourcen in runden Klammern nach try um sie im Nachhinein nicht wieder schließen zu müssen)
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
-					"DELETE FROM einkaufswagenPosition WHERE idUser = ? AND artikelId = ?")) {
-
+					"DELETE FROM einkaufswagenposition WHERE idUser = ? AND artikelId = ?")) {
+			
 			// PreparedStatement Grundgerüst befüllen
 			pstmt.setLong(1, userBean.getId());
 			pstmt.setLong(2, form.getArtikelId());
+			pstmt.executeUpdate();
 			
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
