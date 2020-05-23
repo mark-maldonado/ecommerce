@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -42,16 +43,17 @@ public class EinkaufswagenKaufenServlet extends HttpServlet {
 		// (Ressourcen in runden Klammern nach try um sie im Nachhinein nicht wieder schließen zu müssen)
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
-					"INSERT INTO bestellung VALUES ?")) {
+					"INSERT INTO bestellung (idKunde) VALUES (?)", Statement.RETURN_GENERATED_KEYS)) {
 			
 			// PreparedStatement Grundgerüst befüllen
 			pstmt.setLong(1, userBean.getId());
-			ResultSet rs = pstmt.executeQuery();
+			pstmt.executeUpdate();
 			
 			// Ergebnis id in idBestellung speichern
-			if(rs.next()) {
-				
-				idBestellung = Long.valueOf(rs.getLong("id"));
+			try (ResultSet rs = pstmt.getGeneratedKeys()) {
+				if(rs.next()) {
+					idBestellung = Long.valueOf(rs.getLong(1));
+				}
 			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
@@ -61,25 +63,27 @@ public class EinkaufswagenKaufenServlet extends HttpServlet {
 		try (Connection con = ds.getConnection();
 			// 2.1 alle Artikel aus dem Einkaufswagen bekommen
 			PreparedStatement pstmt = con.prepareStatement(
-					"SELECT FROM einkaufswagenposition WHERE idUser = ?")) {
+					"SELECT artikelId, menge FROM einkaufswagenposition WHERE idUser = ?")) {
 			
 			// PreparedStatement Grundgerüst befüllen
 			pstmt.setLong(1, userBean.getId());
-			ResultSet rs = pstmt.executeQuery();
 			
-			// Ergebnis id in idBestellung speichern
-			while (rs.next()) {
-				// 2.2 Artikel in bestellungPosition schreiben
-				try (Connection conTwo = ds.getConnection();
-				PreparedStatement pstmtTwo = conTwo.prepareStatement(
-						"INSERT INTO bestellungPosition VALUES (?,?,?)")) {
-				
-				// PreparedStatement Grundgerüst befüllen
-				pstmtTwo.setLong(1, rs.getLong("artikelId"));
-				pstmtTwo.setLong(2, rs.getInt("menge"));
-				pstmtTwo.setLong(3, idBestellung);
+			try(ResultSet rs = pstmt.executeQuery()) {
+				System.out.println("hier");
+				// Ergebnis id in idBestellung speichern
+				while (rs.next()) {
+					// 2.2 Artikel in bestellungPosition schreiben
+					try (Connection conTwo = ds.getConnection();
+					PreparedStatement pstmtTwo = conTwo.prepareStatement(
+							"INSERT INTO bestellungposition (artikelId, menge, idBestellung) VALUES (?,?,?)")) {
+					
+					// PreparedStatement Grundgerüst befüllen
+					pstmtTwo.setLong(1, rs.getLong(1));
+					pstmtTwo.setLong(2, rs.getInt(2));
+					pstmtTwo.setLong(3, idBestellung);
+					pstmtTwo.executeUpdate();
+					}
 				}
-			
 			}
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
