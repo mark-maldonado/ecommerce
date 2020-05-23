@@ -52,8 +52,6 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 		// Daten in Datenbank schreiben
 		persist(form);
 		
-		// Scope "Request" (request da Seite nur aufgebaut werden muss)
-		request.setAttribute("form", form);
 		// Redirect weil Daten in die Datenbank geschrieben wird
 		response.sendRedirect("einkaufswagenservlet");
 	}
@@ -92,9 +90,6 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 				pstmt.setLong(1, artikelVorhandenMenge);
 				pstmt.setLong(2, artikelVorhandenId);
 				pstmt.executeUpdate();
-				
-				// Menge zur Übergabe ändern
-				form.setMenge(artikelVorhandenMenge);
 				
 				// Methode verlassen
 				return;
