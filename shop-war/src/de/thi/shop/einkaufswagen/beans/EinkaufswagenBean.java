@@ -41,6 +41,10 @@ public class EinkaufswagenBean implements Serializable {
 		this.id = id;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -51,10 +55,6 @@ public class EinkaufswagenBean implements Serializable {
 	
 	public Long getArtikelId() {
 		return artikelId;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public int getPreis() {
