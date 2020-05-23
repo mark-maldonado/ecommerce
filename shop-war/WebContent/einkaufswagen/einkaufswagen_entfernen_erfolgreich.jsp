@@ -22,7 +22,7 @@
 
 <!-- Text -->
 <main>
-	<h2>Artikel ${artikelName } erfolgreich entfernt!</h2>
+	<h2>Artikel ${form.name } wurde erfolgreich vom Einkaufswagen entfernt!</h2>
 </main>
 
 <!-- Footer -->
