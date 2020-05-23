@@ -40,18 +40,18 @@ public class EinkaufswagenEntfernenServlet extends HttpServlet {
 		// (Ressourcen in runden Klammern nach try um sie im Nachhinein nicht wieder schließen zu müssen)
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
-					"DELETE FROM einkaufswagenPosition WHERE idUser LIKE ? AND artikelId = ?")) {
+					"DELETE * FROM einkaufswagenPosition WHERE idUser = ? AND artikelId = ?")) {
 
 			// PreparedStatement Grundgerüst befüllen
 			pstmt.setLong(1, userBean.getId());
-			pstmt.setLong(2, Long.valueOf(request.getParameter("artikelId")));
+			pstmt.setLong(2, Long.valueOf(request.getParameter("id")));
 			
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 		
 		// Scope "Request" (request da Seite nur aufgebaut werden muss)
-		request.setAttribute("artikelName", request.getParameter("artikelName"));
+		request.setAttribute("artikelName", request.getParameter("name"));
 		// Redirect weil Daten in die Datenbank geschrieben wird
 		response.sendRedirect("einkaufswagen/einkaufswagen_entfernen_erfolgreich.jsp");
 	}
