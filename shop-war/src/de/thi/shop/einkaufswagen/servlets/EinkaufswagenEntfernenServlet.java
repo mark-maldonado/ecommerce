@@ -27,9 +27,6 @@ public class EinkaufswagenEntfernenServlet extends HttpServlet {
 	// get Datasource
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
-	// Attribut für bereits vorhandenen Artikel im Warenkorb
-	private Long artikelVorhandenId = null;
-	private int artikelVorhandenMenge = 0;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Format der zu lesenden Formulardaten
