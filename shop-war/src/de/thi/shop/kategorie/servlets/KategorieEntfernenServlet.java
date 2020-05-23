@@ -70,7 +70,4 @@ public class KategorieEntfernenServlet extends HttpServlet {
 	disp.forward(request, response);
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 }
