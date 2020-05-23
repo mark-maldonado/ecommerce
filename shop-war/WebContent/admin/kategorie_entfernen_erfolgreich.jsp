@@ -22,7 +22,7 @@
 
 <!-- Text -->
 <main>
-	<h2>Die Kategorie ${form.kategorieName } wurde erfolgreich entfernt!</h2>
+	<h2>Die Kategorie ${kategorieBean.kategorieName } wurde erfolgreich entfernt!</h2>
 </main>
 
 <!-- Footer -->
