@@ -121,11 +121,5 @@ public class ArtikelAktualisierenServlet extends HttpServlet {
 			final RequestDispatcher disp = request.getRequestDispatcher("/admin/artikel_bearbeiten_erfolgreich.jsp");
 			disp.forward(request, response);			    
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-
-	
 	
 }
