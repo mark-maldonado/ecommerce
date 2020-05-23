@@ -17,7 +17,7 @@
 <nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
 	<h1>Einkaufswagen</h1>
-	<a href="einkaufswagenservlet">zurück zum Einkaufswagen</a>
+	<a href="../einkaufswagenservlet">zurück zum Einkaufswagen</a>
 </nav>
 
 <!-- Text -->
