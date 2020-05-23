@@ -22,7 +22,7 @@
 
 <!-- Text -->
 <main>
-	<h2>Artikel ${einkaufswagenBean.name } wurde erfolgreich vom Einkaufswagen entfernt!</h2>
+	<h2>Artikel wurde erfolgreich vom Einkaufswagen entfernt!</h2>
 </main>
 
 <!-- Footer -->
