@@ -56,10 +56,6 @@ public class EinkaufswagenEntfernenServlet extends HttpServlet {
 			throw new ServletException(ex.getMessage());
 		}
 		
-		System.out.println(einkaufswagenBean.getName());
-		
-		// Scope "Request" (request da Seite nur aufgebaut werden muss)
-		request.setAttribute("einkaufswagenBean", einkaufswagenBean);
 		// Redirect weil Daten in die Datenbank geschrieben wird
 		response.sendRedirect("einkaufswagen/einkaufswagen_entfernen_erfolgreich.jsp");
 	}
