@@ -32,6 +32,11 @@ public class EinkaufswagenEntfernenServlet extends HttpServlet {
 		// Format der zu lesenden Formulardaten
 		request.setCharacterEncoding("UTF-8");
 		
+		// Daten in Bean schreiben zur Weitergabe an JSP
+		EinkaufswagenBean form = new EinkaufswagenBean();
+		form.setArtikelId(Long.valueOf(request.getParameter("id")));
+		form.setName(request.getParameter("name"));
+				
 		// Session Bean erhalten
 		HttpSession session = request.getSession(false);
 		UserBean userBean = (UserBean) session.getAttribute("userBean");
@@ -44,14 +49,14 @@ public class EinkaufswagenEntfernenServlet extends HttpServlet {
 
 			// PreparedStatement Grundgerüst befüllen
 			pstmt.setLong(1, userBean.getId());
-			pstmt.setLong(2, Long.valueOf(request.getParameter("id")));
+			pstmt.setLong(2, form.getArtikelId());
 			
 		} catch (Exception ex) {
 			throw new ServletException(ex.getMessage());
 		}
 		
 		// Scope "Request" (request da Seite nur aufgebaut werden muss)
-		request.setAttribute("artikelName", request.getParameter("name"));
+		request.setAttribute("form", form);
 		// Redirect weil Daten in die Datenbank geschrieben wird
 		response.sendRedirect("einkaufswagen/einkaufswagen_entfernen_erfolgreich.jsp");
 	}
