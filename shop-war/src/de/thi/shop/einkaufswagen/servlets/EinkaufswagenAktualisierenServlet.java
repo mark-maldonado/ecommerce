@@ -5,6 +5,7 @@ package de.thi.shop.einkaufswagen.servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -49,7 +50,29 @@ public class EinkaufswagenAktualisierenServlet extends HttpServlet {
 		response.sendRedirect("einkaufswagenservlet");
 	}
 	
-	private void persist(EinkaufswagenBean form) throws ServletException {		
+	private void persist(EinkaufswagenBean form) throws ServletException {
+		// 1 ID IN EINKAUFSWAGEN FINDEN
+		try (Connection con = ds.getConnection();
+			PreparedStatement pstmt = con.prepareStatement(
+					"SELECT * FROM einkaufswagenPosition WHERE idUser LIKE ? AND artikelId = ?")) {
+			
+			// PreparedStatement Grundgerüst befüllen
+			pstmt.setLong(1, form.getUserId());
+			pstmt.setLong(2, form.getArtikelId());
+			
+			// Ergebnis mit angegebener Email vergleichen
+			try (ResultSet rs = pstmt.executeQuery()) {
+				if (rs != null && rs.next()) {
+					// vorhandene artikelId und Menge merken
+					artikelVorhandenId = rs.getLong("id");
+				}
+			}
+			
+		} catch (Exception ex) {
+			// Falls nicht vorhanden, nichts machen
+		}
+
+		// 2 MENGE ÄNDERN
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
 					"UPDATE einkaufswagenPosition SET menge = ? WHERE id = ?")) {
