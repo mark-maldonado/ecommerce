@@ -69,7 +69,6 @@ public class EinkaufswagenKaufenServlet extends HttpServlet {
 			pstmt.setLong(1, userBean.getId());
 			
 			try(ResultSet rs = pstmt.executeQuery()) {
-				System.out.println("hier");
 				// Ergebnis id in idBestellung speichern
 				while (rs.next()) {
 					// 2.2 Artikel in bestellungPosition schreiben
