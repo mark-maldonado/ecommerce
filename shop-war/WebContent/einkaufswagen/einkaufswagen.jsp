@@ -24,6 +24,12 @@
 
 
 <main>
+<!-- falls Einkaufswagen leer -->
+<c:when test="${empty alleArtikel }">
+	<h2>Es wurden keine Artikel für Ihren Suchbegriff gefunden.</h2>
+</c:when>
+
+<c:otherwise>
 <!-- Artikel -->
 <section>
 	<c:forEach var="artikel" items="${alleArtikel}" varStatus="status">
@@ -54,6 +60,8 @@
 <section>
 	<a href="../einkaufswagenkaufenservlet">Kaufen</a>
 </section>
+
+</c:otherwise>
 </main>
 
 <!-- Footer -->
