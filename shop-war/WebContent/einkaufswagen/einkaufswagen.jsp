@@ -24,44 +24,46 @@
 
 
 <main>
-<!-- falls Einkaufswagen leer -->
-<c:when test="${empty alleArtikel }">
-	<h2>Es wurden keine Artikel für Ihren Suchbegriff gefunden.</h2>
-</c:when>
-
-<c:otherwise>
-<!-- Artikel -->
-<section>
-	<c:forEach var="artikel" items="${alleArtikel}" varStatus="status">
-		<div>
-			<!-- Bild -->
-			<img src="../artikelbildladenservlet?id=${artikel.id }" alt="${artikel.bildName }" height="75" width="75">
-			<!-- Information -->
-			<div>
-				<p><b>Name: </b>${artikel.name }</p>
-				<p><b>Kategorie: </b>${artikel.kategorieName }</p>
-				<p><b>Preis: </b>${artikel.preisString }</p>
-				<p><b>Menge: </b>${artikel.menge }</p>
-			</div>
-			<!-- Artikel entfernen Knopf -->
-			<div>
-				<a href="../einkaufswagenentfernenservlet?id=${artikel.id }&name=${artikel.name }">Artikel entfernen</a>
-			</div>
-		</div>
-	</c:forEach>
-</section>
-
-<!-- Gesamtsumme -->
-<section>
-	<p><b>Gesamtsumme: </b>${gesamtsumme }</p>
-</section>
-
-<!-- Kaufen Knopf -->
-<section>
-	<a href="../einkaufswagenkaufenservlet">Kaufen</a>
-</section>
-
-</c:otherwise>
+	<!-- falls Einkaufswagen leer -->
+	<c:choose>
+		<c:when test="${empty alleArtikel }">
+			<h2>Ihr Einkaufswagen ist leer.</h2>
+		</c:when>
+		
+		<c:otherwise>
+		<!-- Artikel -->
+		<section>
+			<c:forEach var="artikel" items="${alleArtikel}" varStatus="status">
+				<div>
+					<!-- Bild -->
+					<img src="../artikelbildladenservlet?id=${artikel.id }" alt="${artikel.bildName }" height="75" width="75">
+					<!-- Information -->
+					<div>
+						<p><b>Name: </b>${artikel.name }</p>
+						<p><b>Kategorie: </b>${artikel.kategorieName }</p>
+						<p><b>Preis: </b>${artikel.preisString }</p>
+						<p><b>Menge: </b>${artikel.menge }</p>
+					</div>
+					<!-- Artikel entfernen Knopf -->
+					<div>
+						<a href="../einkaufswagenentfernenservlet?id=${artikel.id }&name=${artikel.name }">Artikel entfernen</a>
+					</div>
+				</div>
+			</c:forEach>
+		</section>
+		
+		<!-- Gesamtsumme -->
+		<section>
+			<p><b>Gesamtsumme: </b>${gesamtsumme }</p>
+		</section>
+		
+		<!-- Kaufen Knopf -->
+		<section>
+			<a href="../einkaufswagenkaufenservlet">Kaufen</a>
+		</section>
+		
+		</c:otherwise>
+	</c:choose>
 </main>
 
 <!-- Footer -->
