@@ -31,7 +31,7 @@
 
 <main>
 <!-- Suchfunktion -->
-<section>
+<section id="suchfunktion">
 	<form method="get" action="../hauptseiteservlet">
 		<fieldset><legend>Artikel Suchen</legend>
 			<div>
@@ -44,7 +44,7 @@
 </section>
 
 <!-- Artikel -->
-<section>
+<section class="artikel">
 	<c:forEach var="artikel" items="${alleArtikel}" varStatus="status">
 		<div>
 			<!-- Bild -->
