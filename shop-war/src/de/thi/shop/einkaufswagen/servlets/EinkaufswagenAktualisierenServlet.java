@@ -5,8 +5,6 @@ package de.thi.shop.einkaufswagen.servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Timestamp;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
