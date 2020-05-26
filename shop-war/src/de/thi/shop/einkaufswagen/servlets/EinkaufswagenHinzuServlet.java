@@ -42,10 +42,6 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 		// Daten in Bean schreiben zur Weitergabe an JSP
 		EinkaufswagenBean form = new EinkaufswagenBean();
 		form.setArtikelId(Long.valueOf(request.getParameter("artikelId")));
-		form.setName(request.getParameter("name"));
-		form.setPreis(Integer.valueOf(request.getParameter("preis")));
-		form.setBildName(request.getParameter("bildName"));
-		form.setKategorieId(Long.valueOf(request.getParameter("kategorieId")));
 		form.setMenge(Integer.valueOf(request.getParameter("menge")));
 		form.setUserId(userBean.getId());
 		
