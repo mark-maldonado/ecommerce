@@ -1,1 +1,7 @@
+@import url("nav.css");
 
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-izing: border-box;
+	box-sizing: border-box;
+}
