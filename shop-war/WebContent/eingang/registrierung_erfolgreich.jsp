@@ -14,10 +14,10 @@
 <body>
 
 <!-- Kopfzeile -->
-<header>
+<nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
-	<h1>erfolgreiche Registrierung</h1>
-</header>
+	<h1>Registrierung erfolgreich</h1>
+</nav>
 
 <!-- Text -->
 <main>

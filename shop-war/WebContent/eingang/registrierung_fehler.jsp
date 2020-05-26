@@ -14,9 +14,10 @@
 <body>
 
 <!-- Kopfzeile -->
-<header>
+<nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
-</header>
+	<h1>Registrierung Fehler</h1>
+</nav>
 
 <!-- Text -->
 <main>

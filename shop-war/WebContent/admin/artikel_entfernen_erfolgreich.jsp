@@ -16,7 +16,7 @@
 <!-- Kopfzeile -->
 <nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
-	<h1>Artikel Entfernen</h1>
+	<h1>Artikel entfernen</h1>
 	<a href="../hauptseiteservlet">zurück zur Hauptseite</a>
 </nav>
 
