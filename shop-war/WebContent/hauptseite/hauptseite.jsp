@@ -68,10 +68,6 @@
 					<div>
 						<!-- Übergabewerte in Form schreiben -->
 						<input type="hidden" name="artikelId" value="${artikel.id }">
-						<input type="hidden" name="name" value="${artikel.name }">
-						<input type="hidden" name="preis" value="${artikel.preis }">
-						<input type="hidden" name="kategorieId" value="${artikel.kategorieId }">
-						<input type="hidden" name="kategorieName" value="${artikel.kategorieName }">
 						<!-- Input Wert -->
 					  <label for="menge_id">Menge:</label>
 					  <input type="number" name="menge" id="menge_id" value="1" min="1">
