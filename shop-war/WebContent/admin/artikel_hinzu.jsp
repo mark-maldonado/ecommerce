@@ -18,7 +18,7 @@
 <!-- Kopfzeile -->
 <nav>
 	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
-	<h1><!-- Name der rechts neben dem Logo steht --></h1>
+	<h1>Artikel Hinzufügen</h1>
 	<a href="../hauptseiteservlet">zurück</a>
 </nav>
 
