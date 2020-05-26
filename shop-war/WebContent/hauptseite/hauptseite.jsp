@@ -74,7 +74,7 @@
 						<input type="hidden" name="kategorieName" value="${artikel.kategorieName }">
 						<!-- Input Wert -->
 					  <label for="menge_id">Menge:</label>
-					  <input type="number" name="menge" id="menge_id" value="1">
+					  <input type="number" name="menge" id="menge_id" value="1" min="1">
 					  <button type="submit">In den Einkaufswagen</button>
 					</div>
 				</fieldset>
