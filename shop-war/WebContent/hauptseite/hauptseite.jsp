@@ -66,7 +66,7 @@
 			</c:if>
 			<!-- Anzahl in den Einkaufwagen -->
 			<form method="get" action="../einkaufswagenhinzuservlet">
-				<fieldset><legend>Artikel Suchen</legend>
+				<fieldset><legend>Artikel in den Einkaufswagen hinzufügen</legend>
 					<div>
 						<!-- Übergabewerte in Form schreiben -->
 						<input type="hidden" name="artikelId" value="${artikel.id }">
