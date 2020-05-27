@@ -24,9 +24,9 @@
 </nav>
 
 <!-- Text -->
-<section>
+<main>
 	<h2>Artikel erfolgreich entfernt!</h2>
-</section>
+</main>
 
 <!-- Footer -->
 <%@ include file="../jspfs/footer.jspf" %>
