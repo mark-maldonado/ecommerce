@@ -17,17 +17,19 @@
 
 <!-- Kopfzeile -->
 <nav>
-	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
-	<h1>Hauptseite</h1>
-	<a href="../abmeldenservlet">abmelden</a>
-	<a href="../einkaufswagenservlet">zum Einkaufswagen</a>	
+<ul>
+	<li><img src="../img/logo.png" alt="Logobild" width="35" height="42"></li>
+	<li><h1>Hauptseite</h1></li>
+	<li><a href="../abmeldenservlet">abmelden</a></li>
+	<li><a href="../einkaufswagenservlet">zum Einkaufswagen</a></li>
 	
 	<!-- testen ob Admin angemeldet ist -->
 	<c:if test="${sessionScope.isAdmin }">
-		<a href="../kategorieentfernenservlet">Kategorie entfernen</a>
-		<a href="../admin/kategorie_hinzu.jsp">Kategorie hinzufügen</a>
-		<a href="../artikelhinzuservlet">Artikel hinzufügen</a>
+		<li><a href="../kategorieentfernenservlet">Kategorie entfernen</a></li>
+		<li><a href="../admin/kategorie_hinzu.jsp">Kategorie hinzufügen</a></li>
+		<li><a href="../artikelhinzuservlet">Artikel hinzufügen</a></li>
 	</c:if>
+</ul>
 </nav>
 
 <main>

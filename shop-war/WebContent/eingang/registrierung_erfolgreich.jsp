@@ -16,8 +16,10 @@
 
 <!-- Kopfzeile -->
 <nav>
-	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
-	<h1>Registrierung erfolgreich</h1>
+<ul>
+	<li><img src="../img/logo.png" alt="Logobild" width="35" height="42"></li>
+	<li><h1>Registrierung erfolgreich</h1></li>
+</ul>
 </nav>
 
 <!-- Text -->

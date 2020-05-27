@@ -15,11 +15,13 @@
 <body>
 
 <!-- Kopfzeile -->
-<header>
-	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
-	<h1>Artikel hinzufügen</h1>
-	<a href="../hauptseiteservlet">zurück zur Hauptseite</a>
-</header>
+<nav>
+<ul>
+	<li><img src="../img/logo.png" alt="Logobild" width="35" height="42"></li>
+	<li><h1>Artikel hinzufügen</h1></li>
+	<li><a href="../hauptseiteservlet">zurück zur Hauptseite</a></li>
+</ul>
+</nav>
 
 <!-- Text -->
 <main>

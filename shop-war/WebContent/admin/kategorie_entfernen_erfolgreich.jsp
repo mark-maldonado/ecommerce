@@ -16,9 +16,11 @@
 
 <!-- Kopfzeile -->
 <nav>
-	<img src="../img/logo.png" alt="Logobild" width="35" height="42">
-	<h1>Kategorie entfernen</h1>
-	<a href="../hauptseite/hauptseite.jsp">zurück</a>
+<ul>
+	<li><img src="../img/logo.png" alt="Logobild" width="35" height="42"></li>
+	<li><h1>Kategorie entfernen</h1></li>
+	<li><a href="../hauptseite/hauptseite.jsp">zurück</a></li>
+</ul>
 </nav>
 
 <!-- Text -->
