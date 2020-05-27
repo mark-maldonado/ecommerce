@@ -1,7 +1,18 @@
 @import url("nav.css");
 
+@font-face {
+	font-family: sf;
+	src: url("../font/font.otf") format("otf");
+}
+
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-izing: border-box;
 	box-sizing: border-box;
+	font-family: "SF Pro Display", "Times New Roman", Times, serif;
+}
+
+body {
+	padding: 0;
+	margin: 0;
 }
