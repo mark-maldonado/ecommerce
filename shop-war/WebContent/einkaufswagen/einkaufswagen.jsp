@@ -35,35 +35,36 @@
 		
 		<c:otherwise>
 		<!-- Artikel -->
-		<section>
+		<section class="artikel">
 			<c:forEach var="artikel" items="${alleArtikel}" varStatus="status">
 				<div>
 					<!-- Bild -->
-					<img src="../artikelbildladenservlet?id=${artikel.id }" alt="${artikel.bildName }" height="75" width="75">
+					<img src="../artikelbildladenservlet?id=${artikel.id }" alt="${artikel.bildName }" height="115" width="115">
 					<!-- Information -->
-					<div>
+					<div class="info">
 						<p><b>Name: </b>${artikel.name }</p>
 						<p><b>Kategorie: </b>${artikel.kategorieName }</p>
 						<p><b>Preis: </b>${artikel.preisString }</p>
-
-						<!-- Menge ändern -->
-						<form method="get" action="../einkaufswagenaktualisierenservlet">
-							<fieldset><legend>Menge aktualisieren</legend>
-								<div>
-									<!-- Übergabewerte in Form schreiben -->
-									<input type="hidden" name="artikelId" value="${artikel.id }">
-									<!-- Input Wert -->
-								  <label for="menge_id">Menge:</label>
-								  <input type="number" name="menge" id="menge_id" value="${artikel.menge }" min="1">
-								  <button type="submit">Aktualisieren</button>
-								</div>
-							</fieldset>
-						</form>
 					</div>
+
 					<!-- Artikel entfernen Knopf -->
 					<div>
 						<a href="../einkaufswagenentfernenservlet?id=${artikel.id }&name=${artikel.name }">Artikel entfernen</a>
 					</div>
+
+					<!-- Menge ändern -->
+					<form method="get" action="../einkaufswagenaktualisierenservlet">
+						<fieldset><legend>Menge aktualisieren</legend>
+							<div>
+								<!-- Übergabewerte in Form schreiben -->
+								<input type="hidden" name="artikelId" value="${artikel.id }">
+								<!-- Input Wert -->
+							  <label for="menge_id">Menge:</label>
+							  <input type="number" name="menge" id="menge_id" value="${artikel.menge }" min="1">
+							  <button type="submit">Aktualisieren</button>
+							</div>
+						</fieldset>
+					</form>
 				</div>
 			</c:forEach>
 		</section>
