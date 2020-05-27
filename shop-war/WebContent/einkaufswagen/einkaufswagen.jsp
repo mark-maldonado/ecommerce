@@ -48,7 +48,7 @@
 
 						<!-- Menge ändern -->
 						<form method="get" action="../einkaufswagenaktualisierenservlet">
-							<fieldset><legend>Artikel Suchen</legend>
+							<fieldset><legend>Menge aktualisieren</legend>
 								<div>
 									<!-- Übergabewerte in Form schreiben -->
 									<input type="hidden" name="artikelId" value="${artikel.id }">
