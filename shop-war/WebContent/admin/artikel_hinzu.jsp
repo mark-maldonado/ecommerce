@@ -31,7 +31,7 @@
 		<fieldset><legend>Artikel Hinzufügen</legend>
 		<div>
 			<label for="artikelBild_id">Bild:</label>
-			<input class="bild" type="file" name="artikelBild" id="artikelBild_id" accept="image/*">
+			<input class="bild" type="file" name="artikelBild" id="artikelBild_id" accept="image/*" required>
 		</div>
 		<div>
 			<label for="artikelName_id">Name:</label> 
@@ -39,7 +39,7 @@
 		</div>
 		<div class="selectdiv">
 			<label for="artikelKategorie_id">Kategorie:</label>
-			<select name="artikelKategorie" id="artikelKategorie_id">
+			<select name="artikelKategorie" id="artikelKategorie_id" required>
 				<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 					<option>${currentKategorie.kategorieName}</option>
 				</c:forEach>
