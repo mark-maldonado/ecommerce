@@ -32,7 +32,7 @@
 			<div>
 				<img src="../artikelbildladenservlet?id=${artikelBean.id}" alt="${artikelBean.bildName}" height="50" width="50">
 				<label for="artikelBeild_id">Bild:</label>
-				<input class="file" type="file" name="artikelBild" id="artikelBild_id" accept="image/*">
+				<input class="bild" type="file" name="artikelBild" id="artikelBild_id" accept="image/*">
 			</div>
 			<div>
 				<label for="artikelId_id">ID:</label>
