@@ -33,10 +33,24 @@
 </nav>
 
 <main>
+<!-- Kategorien -->
+<section id="kategorien">
+	<ul>
+		<c:forEach var="kategorie" items="${alleKategorien}" varStatus="status">
+			<li>
+				<a href="../hauptseiteservlet?suche=${kategorie.kategorieName}">
+				<img src="../kategoriebildladenservlet?id=${kategorie.id}" alt="${kategorie.kategorieName}" height="25" width="25">
+				${kategorie.kategorieName}</a>
+			</li>
+		</c:forEach>
+	</ul>
+</section>
+
 <!-- Suchfunktion -->
 <section id="suchfunktion">
 	<form method="get" action="../hauptseiteservlet">
 		<fieldset><legend>Artikel Suchen</legend>
+			<!-- Suche durch Text -->
 			<div>
 			  <label for="suche_id">Artikel:</label>
 			  <input type="text" name="suche" id="suche_id" placeholder="Suchtext">
