@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 /**
  * Servlet implementation class KategorieBildLadenServlet
  */
-@WebServlet("/KategorieBildLadenServlet")
+@WebServlet("/kategoriebildladenservlet")
 public class KategorieBildLadenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -40,15 +40,15 @@ public class KategorieBildLadenServlet extends HttpServlet {
 		// Format der zu lesenden Formulardaten
 				request.setCharacterEncoding("UTF-8");
 				
-				// empfangene id lesen
-				Long id = Long.valueOf(request.getParameter("id"));
+				// empfangenen namen lesen
+				String name = request.getParameter("name");
 				
 				// DB-Zugriff
 				try (Connection con = ds.getConnection();
-					 PreparedStatement pstmt = con.prepareStatement("SELECT bild FROM kategorie WHERE id = ?") ) {
+					 PreparedStatement pstmt = con.prepareStatement("SELECT bild FROM kategorie WHERE name = ?") ) {
 					
 					// Grundgerüst mit 1 Wert befüllen
-					pstmt.setLong(1, id);
+					pstmt.setString(1, name);
 					
 					// Ergebnis zum Befehl speichern
 					try (ResultSet rs = pstmt.executeQuery()) {

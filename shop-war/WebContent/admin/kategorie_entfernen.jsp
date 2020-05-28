@@ -29,16 +29,15 @@
 <main>
 	<form method="get" action="../kategorieloeschenservlet">
 		<fieldset><legend>Kategorie entfernen</legend>
-			<div class="selectdiv">
+			<div class="selectdiv"> 
 				<label for="kategorieName_id">Kategorie:</label>
 				<select name="kategorieName" id="kategorieName_id">
 					<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
 						<option>${currentKategorie.kategorieName}</option>
-						<img src="../kategoriebildladenservlet?id=${currentKategorie.id}" alt="${currentKategorie.kategorieName}" height="115" width="115">
 					</c:forEach>
 				</select>
 			</div>
-
+			
 			<div class="buttons">
 				<button type="submit">Entfernen</button>
 			</div>
