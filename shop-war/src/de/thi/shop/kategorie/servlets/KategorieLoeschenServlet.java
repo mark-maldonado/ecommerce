@@ -41,25 +41,22 @@ public class KategorieLoeschenServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");
-		String kategorieName = request.getParameter("kategorieName");
 		
 		// Bean erstellen und Name vergeben
 		KategorieBean kategorieBean = new KategorieBean();
-		kategorieBean.setKategorieName(kategorieName);
+		kategorieBean.setKategorieName(request.getParameter("kategorieName"));
 		
 			try(Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("DELETE FROM kategorie WHERE name = ?")) {
 			
-				pstmt.setString(1, kategorieName);
+				pstmt.setString(1, kategorieBean.getKategorieName());
 				pstmt.executeUpdate();
 			
 			}	catch (Exception ex) {
 				throw new ServletException(ex.getMessage());
 		 		}
 	
-		request.setAttribute("kategorieBean", kategorieBean);
-		RequestDispatcher disp = request.getRequestDispatcher("admin/kategorie_entfernen_erfolgreich.jsp");
-		disp.forward(request, response);
+		response.sendRedirect("admin/kategorie_entfernen_erfolgreich.jsp");
 	}
 
 }

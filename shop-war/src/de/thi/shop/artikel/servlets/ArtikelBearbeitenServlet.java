@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -83,14 +84,15 @@ public class ArtikelBearbeitenServlet extends HttpServlet {
 		List<KategorieBean> kategorien = new ArrayList<KategorieBean>();
 		
 		try(Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("SELECT name FROM kategorie")) {
-			     
-			try (ResultSet rs = pstmt.executeQuery()) {
+				Statement stmt = con.createStatement();
+			    ResultSet rs = stmt.executeQuery("SELECT name FROM kategorie")) {
 				
 				while(rs.next()){
+					
 					//Bei jeder gefundenen Kategorie, neuer Eintrag in Liste
 					KategorieBean kategorieBean = new KategorieBean();			
 					String kategorieName = rs.getString("name");    
+					
 					//�berpr�fung ob Kategorie vom aktuellen Artikel, damit kein doppelter Eintrag in Liste
 						if(kategorieName.equals(artikelBean.getKategorieName())) {
 							//dann nichts
@@ -100,7 +102,6 @@ public class ArtikelBearbeitenServlet extends HttpServlet {
 							kategorien.add(kategorieBean);
 						}
 				}
-			}
 		}catch(Exception ex) {
 			  throw new ServletException(ex.getMessage());
 		}		

@@ -25,11 +25,15 @@
 
 <!-- Text -->
 <main>
-	<form method="get" action="../kategoriehinzufuegenservlet">
+	<form method="post" action="../kategoriehinzufuegenservlet" enctype="multipart/form-data">
 		<fieldset><legend>Kategorie hinzufügen</legend>
 			<div>
 				<label for="kategorieId">Kategorie-Name:</label>
 				<input type="text" name="kategorieName" id="kategorieId" placeholder="Kategorie-Name" required></th>
+			</div>
+			<div>
+				<label for="icon">Kategorie-Icon:</label>
+				<input class="bild" type="file" name="kategorieBild" id="kategorieBild_id" accept="image/*">
 			</div>
 			<div class="buttons">
 				<button type="submit">Hinzufügen</button>

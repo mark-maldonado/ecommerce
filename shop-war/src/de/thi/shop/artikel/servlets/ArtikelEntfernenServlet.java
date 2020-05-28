@@ -54,8 +54,7 @@ public class ArtikelEntfernenServlet extends HttpServlet {
 				throw new ServletException(ex.getMessage());
 			}
 		
-		RequestDispatcher disp = request.getRequestDispatcher("admin/artikel_entfernen_erfolgreich.jsp");
-		disp.forward(request, response);
+			response.sendRedirect("admin/artikel_entfernen_erfolgreich.jsp");
 		
 	}
 

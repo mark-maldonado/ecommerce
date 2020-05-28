@@ -118,8 +118,7 @@ public class ArtikelAktualisierenServlet extends HttpServlet {
 				throw new ServletException(ex.getMessage());
 				}
 
-			final RequestDispatcher disp = request.getRequestDispatcher("/admin/artikel_bearbeiten_erfolgreich.jsp");
-			disp.forward(request, response);			    
+			response.sendRedirect("admin/artikel_bearbeiten_erfolgreich.jsp");
 	}
 	
 }

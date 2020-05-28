@@ -25,7 +25,7 @@
 
 <!-- Text -->
 <main>
-	<h2>Artikel erfolgreich entfernt!</h2>
+	<h2>Artikel wurde erfolgreich entfernt!</h2>
 </main>
 
 <!-- Footer -->

@@ -69,8 +69,7 @@ public class ArtikelHinzufuegenServlet extends HttpServlet {
 					if(rs.next()) {
 						artikelVorhanden = true;
 						artikelBean.setId(rs.getLong("id"));
-						RequestDispatcher disp = request.getRequestDispatcher("admin/artikel_hinzu_fehler.jsp");
-						disp.forward(request, response);
+						response.sendRedirect("/admin/artikel_hinzu_fehler.jsp");
 					}
 				}
 		}catch(Exception ex) {
@@ -78,11 +77,15 @@ public class ArtikelHinzufuegenServlet extends HttpServlet {
 		}	
 		
 		if(!artikelVorhanden) {
+			
 		//Bild holen und Name holen
+		
+		//Dieser Teil ist vom Internet : https://stackoverflow.com/questions/39229087/how-to-insert-and-retrieve-image-database-using-jsp-servlet
 		Part filePart = request.getPart("artikelBild");
 		InputStream inputStream = null;
 		inputStream = filePart.getInputStream();
 		String bildName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
+		
 		
 		// .jpg von Bildname entfernen
 		if (bildName.indexOf(".") > 0) {
@@ -109,10 +112,8 @@ public class ArtikelHinzufuegenServlet extends HttpServlet {
 		
 		//Funktion zum eigentliche hinzuf�gen aufrufen
 		add(artikelBean, kategorieId, inputStream);
-		request.setAttribute("artikelBean", artikelBean);
 		
-		RequestDispatcher disp = request.getRequestDispatcher("admin/artikel_hinzu_erfolgreich.jsp");
-		disp.forward(request, response);
+		response.sendRedirect("/admin/artikel_hinzu_erfolgreich.jsp");
 
 		}
 	}
