@@ -85,7 +85,7 @@ public class KategorieHinzufuegenServlet extends HttpServlet {
 		if(!vorhanden) {
 		String [] generatedKeys = new String[] {"id"};
 		
-		//in Datenbank einfï¿½gen
+		//in Datenbank einfügen
 		try(Connection con = ds.getConnection();
 				PreparedStatement pstmt = con.prepareStatement("INSERT INTO kategorie (name, bildK, bildNameK) VALUES (?,?,?)", generatedKeys)){
 			

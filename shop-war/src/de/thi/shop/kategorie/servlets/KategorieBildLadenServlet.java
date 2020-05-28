@@ -57,7 +57,7 @@ public class KategorieBildLadenServlet extends HttpServlet {
 						if (rs != null && rs.next()) {
 							Blob bild = rs.getBlob("bild");
 							
-							// Bildlänge in Header schreiben
+							// Bildlänge in Header  schreiben
 							response.reset();
 							long length = bild.length();
 							response.setHeader("Content-Length",String.valueOf(length));
