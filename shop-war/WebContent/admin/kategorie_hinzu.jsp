@@ -33,7 +33,7 @@
 			</div>
 			<div>
 				<label for="icon">Kategorie-Icon:</label>
-				<input class="bild" type="file" name="kategorieBild" id="kategorieBild_id" accept="image/*">
+				<input class="bild" type="file" name="kategorieBild" id="kategorieBild_id" accept="image/*" required>
 			</div>
 			<div class="buttons">
 				<button type="submit">Hinzufügen</button>
