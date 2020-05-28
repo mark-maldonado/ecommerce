@@ -65,6 +65,8 @@ public class HauptseiteServlet extends HttpServlet {
 	
 	private List<KategorieBean> kategorien() throws ServletException {
 		
+		System.out.println("inside kategorien");
+		
 		List<KategorieBean> kategorien = new ArrayList<KategorieBean>();
 		
 		//Hole alle Kategorien
@@ -72,10 +74,14 @@ public class HauptseiteServlet extends HttpServlet {
 				Statement stmt = con.createStatement();
 			    ResultSet rs = stmt.executeQuery("SELECT name, id FROM kategorie")) {
 			     
-				while(rs.next()){				
+				while(rs.next()){	
+					System.out.println("kategorien inside while");
+					
 					//Bei jeder gefundenen Kategorie, neuer Eintrag in Liste
 					KategorieBean kategorieBean = new KategorieBean();			
 					String kategorieName = rs.getString("name");    
+					
+					System.out.println(kategorieName);
 					
 					//ï¿½berprï¿½fung ob Kategorie vom aktuellen Artikel, damit kein doppelter Eintrag in Liste
 					kategorieBean.setKategorieName(kategorieName);
@@ -90,6 +96,8 @@ public class HauptseiteServlet extends HttpServlet {
 	}
 	
 	private List<ArtikelBean> search(String suche) throws ServletException {
+		System.out.println("inside search");
+		
 		// lastname wenn leer alle Anzeigen sonst, lastname als Zwischenwert suchen
 		suche = (suche == null || suche == "") ? "%" : "%" + suche + "%";
 		//zu übergebene Liste von Bohne erstellen
@@ -107,6 +115,8 @@ public class HauptseiteServlet extends HttpServlet {
 			
 				//solange Werte vorhanden (von den Gesuchten)
 				while (rs.next()) {
+					System.out.println("inside search while next");
+					
 					//Bohne erstellen und mit Werte der gefundenen Zeile befüllen
 					ArtikelBean artikel = new ArtikelBean();
 					
@@ -115,6 +125,8 @@ public class HauptseiteServlet extends HttpServlet {
 					
 					String name = rs.getString("name");
 					artikel.setName(name);
+					
+					System.out.println(name);
 					
 					// Cents in Euro String umwandeln
 					int preis = Integer.valueOf(rs.getInt("preis"));
