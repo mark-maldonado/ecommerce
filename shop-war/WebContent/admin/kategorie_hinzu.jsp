@@ -33,11 +33,7 @@
 			</div>
 			<div>
 				<label for="icon">Kategorie-Icon:</label>
-<<<<<<< HEAD
 				<input class="bild" type="file" name="kategorieBild" id="kategorieBild_id" accept="image/*" required>
-=======
-				<input class="bild" type="file" name="kategorieBild" id="kategorieBild_id" accept="image/*">
->>>>>>> branch 'master' of https://github.com/mark-maldonado/ecommerce.git
 			</div>
 			<div class="buttons">
 				<button type="submit">Hinzufügen</button>
