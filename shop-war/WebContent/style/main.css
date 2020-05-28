@@ -1,0 +1,64 @@
+@font-face {
+	font-family: sf;
+	src: url("../font/font.otf") format("otf");
+}
+
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-izing: border-box;
+	box-sizing: border-box;
+	font-family: "SF Pro Display", "Times New Roman", Times, serif;
+}
+
+*::selection {
+	background-color: black;
+	color: white;
+}
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	padding: 0;
+	margin: 0 0 8rem 0;
+}
+
+main {
+	position: relative;
+	top: 120px;
+	padding: 20px;
+}
+
+main h2, main h3 {
+	text-align: center;
+}
+
+main img {
+	display: block;
+	margin: 0 0 15px 0;
+	border-radius: 5px;
+}
+
+main a, main button {
+	border-radius: 5px;
+	text-decoration: none;
+	background-color: black;
+	color: white;
+	font-weight: 600;
+	font-size: 1rem;
+	border: 3px solid black;
+	cursor: pointer;
+	margin: 0 5px 5px 0;
+	padding: 3px;
+}
+
+main a:hover, main button:hover {
+	background-color: white;
+	color: black;
+}
+
+.center {
+	text-align: center;
+}

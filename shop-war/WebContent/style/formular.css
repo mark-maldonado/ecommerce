@@ -1,0 +1,109 @@
+form {
+	box-shadow: 0px 0px 30px 5px #e6e6e6;
+	margin: 15px auto;
+	border-radius: 10px;
+	max-width: 500px;
+	background-color: white;
+}
+
+form fieldset {
+	border: none;
+}
+
+form fieldset legend {
+	font-size: 1.35rem;
+	font-weight: 600;
+	margin: 10px 0;
+}
+
+/* label + input Block */
+form fieldset div {
+	padding: 10px 0 0 0;
+}
+
+form fieldset label {
+	font-weight: 600;
+	min-width: 10rem;
+	display: inline-block;
+}
+
+#suchfunktion form fieldset label {
+	min-width: 0;
+}
+
+form fieldset input {
+	padding: 0 7px;
+	border: 0;
+	border-bottom: 2px solid black;
+	height: 1.7rem;
+	font-weight: 600;
+}
+
+/* input bild */
+.bild {
+	display: inline-block;
+	max-width: 200px;
+	border: none;
+}
+
+/* Dropdown */
+.selectdiv::after {
+	content: "<>";
+   	-webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+/* Knopf in Internet Explorer entfernen */
+form fieldset select::-ms-expand {
+   display: none;
+}
+
+form fieldset select {
+	appearance: none;
+	padding: 0 7px;
+	border: 0;
+	border-bottom: 2px solid black;
+	height: 1.7rem;
+	font-weight: 600;
+}
+
+form fieldset select option {
+	color: black;
+}
+
+/* Maus über option in Dropdown */
+form fieldset select option:hover {
+	background-color: black;
+	color: white;
+}
+
+form fieldset select option:checked {
+	background-color: white;
+	color: black;
+}
+
+
+/* Buttons */
+.buttons {
+	margin-top: 20px;
+}
+
+.green {
+	background-color: #40dc62;
+	border-color: #40dc62;
+}
+
+.green:hover {
+	color: #40dc62;
+}
+
+.yellow {
+	background-color: #ffe100;
+	border-color: #ffe100;
+}
+
+.yellow:hover {
+	color: #ffe100;
+}

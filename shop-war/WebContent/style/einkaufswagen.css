@@ -1,0 +1,29 @@
+.gesamtsumme p {
+	text-align: center;
+	font-weight: 500;
+}
+
+.kaufen {
+	height: 5rem;
+ 	 display: flex;
+  	align-items: center;
+  	justify-content: center
+}
+
+.kaufen a {
+	text-align: center;
+	display: block;
+	text-decoration: none;
+	padding: 10px 15px;
+	border-radius: 7px;
+	font-size: 1.3rem;
+	font-weight: 600;
+	background-color: #40dc62;
+	color: white;
+	border: 3px solid #40dc62;
+}
+
+.kaufen a:hover {
+	color: #40dc62;
+	background-color: white;
+}
