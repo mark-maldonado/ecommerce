@@ -67,7 +67,7 @@ public class HauptseiteServlet extends HttpServlet {
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
 			// Grundgerüst erstellen
-			 PreparedStatement pstmt = con.prepareStatement("SELECT artikel.id, artikel.name, preis, artikel.bildName, kategorie.id AS kategroieId, kategorie.name AS kategorieName FROM artikel INNER JOIN kategorie ON (artikel.idKategorie = kategorie.id) WHERE artikel.name LIKE ? OR kategorie.name LIKE ? ORDER BY artikel.name")) {
+			 PreparedStatement pstmt = con.prepareStatement("SELECT artikel.id, artikel.name, preis, bildName, kategorie.id AS kategroieId, kategorie.name AS kategorieName FROM artikel INNER JOIN kategorie ON (artikel.idKategorie = kategorie.id) WHERE artikel.name LIKE ? OR kategorie.name LIKE ? ORDER BY artikel.name")) {
 
 			//Grundgerüst mit 1 Wert füllen
 			pstmt.setString(1, suche);

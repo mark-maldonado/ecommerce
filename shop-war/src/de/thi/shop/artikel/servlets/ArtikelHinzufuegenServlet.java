@@ -113,7 +113,7 @@ public class ArtikelHinzufuegenServlet extends HttpServlet {
 		//Funktion zum eigentliche hinzuf�gen aufrufen
 		add(artikelBean, kategorieId, inputStream);
 		
-		response.sendRedirect("/admin/artikel_hinzu_erfolgreich.jsp");
+		response.sendRedirect("admin/artikel_hinzu_erfolgreich.jsp");
 
 		}
 	}

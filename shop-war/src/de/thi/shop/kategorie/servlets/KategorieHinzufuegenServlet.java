@@ -87,7 +87,7 @@ public class KategorieHinzufuegenServlet extends HttpServlet {
 		
 		//in Datenbank einf�gen
 		try(Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("INSERT INTO kategorie (name, bild, bildName) VALUES (?,?,?)", generatedKeys)){
+				PreparedStatement pstmt = con.prepareStatement("INSERT INTO kategorie (name, bildK, bildNameK) VALUES (?,?,?)", generatedKeys)){
 			
 			pstmt.setString(1, kategorieBean.getKategorieName());
 			pstmt.setBlob(2, inputStream);
