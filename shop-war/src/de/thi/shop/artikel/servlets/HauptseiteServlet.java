@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Timestamp;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import de.thi.shop.artikel.beans.ArtikelBean;
+import de.thi.shop.kategorie.beans.KategorieBean;
 
 @WebServlet("/hauptseiteservlet")
 public class HauptseiteServlet extends HttpServlet {
@@ -47,15 +48,52 @@ public class HauptseiteServlet extends HttpServlet {
 		// Such-String lesen
 		String suche = request.getParameter("suche");
 		
-		// Werte aus Datenbank in eine Bean speichern zur Weitergaben an die JSP
+		// Kategorien aus Datenbank in eine Bean speichern zur Weitergaben an die JSP
+		List<KategorieBean> alleKategorien = kategorien();
+		System.out.println("hier");
+		
+		// Artiekl aus Datenbank in eine Bean speichern zur Weitergaben an die JSP
 		List<ArtikelBean> alleArtikel = search(suche);
 		
 		// Scope "Request" (request da Seite nur aufgebaut werden muss)
+		request.setAttribute("alleKategorien", alleKategorien);
 		request.setAttribute("alleArtikel", alleArtikel);
 		
 		// Weiterleiten an JSP
 		final RequestDispatcher dispatcher = request.getRequestDispatcher("hauptseite/hauptseite.jsp");
 		dispatcher.forward(request, response);
+	}
+	
+	private List<KategorieBean> kategorien() throws ServletException {
+		System.out.println("inside");
+		
+		List<KategorieBean> kategorien = new ArrayList<KategorieBean>();
+		
+		//Hole alle Kategorien
+		try(Connection con = ds.getConnection();
+				Statement stmt = con.createStatement();
+			    ResultSet rs = stmt.executeQuery("SELECT name, id FROM kategorie")) {
+			     
+				while(rs.next()){
+					
+					System.out.println("inside2");
+					
+					//Bei jeder gefundenen Kategorie, neuer Eintrag in Liste
+					KategorieBean kategorieBean = new KategorieBean();			
+					String kategorieName = rs.getString("name");    
+					
+					System.out.println(kategorieName);
+					
+					//�berpr�fung ob Kategorie vom aktuellen Artikel, damit kein doppelter Eintrag in Liste
+					kategorieBean.setKategorieName(kategorieName);
+					kategorieBean.setId(rs.getLong("id"));
+					kategorien.add(kategorieBean);
+				}
+		} catch(Exception ex) {
+			  throw new ServletException(ex.getMessage());
+		}		
+		
+		return kategorien;
 	}
 	
 	private List<ArtikelBean> search(String suche) throws ServletException {
