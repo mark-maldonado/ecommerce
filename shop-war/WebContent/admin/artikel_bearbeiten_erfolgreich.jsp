@@ -25,7 +25,7 @@
 
 <!-- Text -->
 <main>
-	<h2>Artikel erfolgreich bearbeitet!</h2>
+	<h2>Artikel wurde erfolgreich bearbeitet!</h2>
 </main>
 
 <!-- Footer -->

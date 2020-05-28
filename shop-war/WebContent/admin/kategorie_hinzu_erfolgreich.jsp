@@ -25,7 +25,7 @@
 
 <!-- Text -->
 <main>
-	<h2>Die Kategorie ${kategorieBean.kategorieName } wurde erfolgreich hinzugefügt!</h2>
+	<h2>Die Kategorie wurde erfolgreich hinzugefügt!</h2>
 </main>
 
 <!-- Footer -->

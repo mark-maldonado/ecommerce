@@ -25,7 +25,7 @@
 
 <!-- Text -->
 <main>
-	<h2>Artikel schon vorhanden!</h2>
+	<h2>Artikel ist schon vorhanden!</h2>
 </main>
 
 <!-- Footer -->

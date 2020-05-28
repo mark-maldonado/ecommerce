@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -46,20 +47,22 @@ public class KategorieEntfernenServlet extends HttpServlet {
 		
 		List<KategorieBean> kategorien = new ArrayList<KategorieBean>();
 		
+		//Hole alle Kategorien
 		try(Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("SELECT name FROM kategorie")) {
+				Statement stmt = con.createStatement();
+			    ResultSet rs = stmt.executeQuery("SELECT name, id FROM kategorie")) {
 			     
-			try (ResultSet rs = pstmt.executeQuery()) {
-				
 				while(rs.next()){
+					
 					//Bei jeder gefundenen Kategorie, neuer Eintrag in Liste
 					KategorieBean kategorieBean = new KategorieBean();			
 					String kategorieName = rs.getString("name");    
+					
 					//�berpr�fung ob Kategorie vom aktuellen Artikel, damit kein doppelter Eintrag in Liste
 					kategorieBean.setKategorieName(kategorieName);
+					kategorieBean.setId(rs.getLong("id"));
 					kategorien.add(kategorieBean);
 				}
-			}
 		}catch(Exception ex) {
 			  throw new ServletException(ex.getMessage());
 		}		

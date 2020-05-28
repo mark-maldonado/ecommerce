@@ -25,7 +25,7 @@
 
 <!-- Text -->
 <main>
-	<h2>Die Kategorie ${form.kategorieName } ist schon vorhanden!</h2>
+	<h2>Die Kategorie ist schon vorhanden!</h2>
 </main>
 
 <!-- Footer -->

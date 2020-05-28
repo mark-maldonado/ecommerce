@@ -25,7 +25,7 @@
 
 <!-- Text -->
 <main>
-	<h2>Artikel ${artikelBean.name} wurde erfolgreich hinzugefügt!</h2>
+	<h2>Artikel wurde erfolgreich hinzugefügt!</h2>
 </main>
 
 <!-- Footer -->

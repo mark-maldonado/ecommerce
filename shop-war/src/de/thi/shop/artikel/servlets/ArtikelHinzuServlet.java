@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,9 +49,8 @@ public class ArtikelHinzuServlet extends HttpServlet {
 		List<KategorieBean> kategorien = new ArrayList<KategorieBean>();
 		
 		try(Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("SELECT name FROM kategorie")) {
-			     
-			try (ResultSet rs = pstmt.executeQuery()) {
+				Statement stmt = con.createStatement();
+			    ResultSet rs = stmt.executeQuery("SELECT name FROM kategorie")) {
 				
 				while(rs.next()){
 					//Bei jeder gefundenen Kategorie, neuer Eintrag in Liste
@@ -60,7 +60,6 @@ public class ArtikelHinzuServlet extends HttpServlet {
 					kategorieBean.setKategorieName(kategorieName);
 					kategorien.add(kategorieBean);
 				}
-			}
 		}catch(Exception ex) {
 			  throw new ServletException(ex.getMessage());
 		}		
