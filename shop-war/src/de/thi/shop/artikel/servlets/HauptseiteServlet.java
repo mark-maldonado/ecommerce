@@ -50,7 +50,6 @@ public class HauptseiteServlet extends HttpServlet {
 		
 		// Kategorien aus Datenbank in eine Bean speichern zur Weitergaben an die JSP
 		List<KategorieBean> alleKategorien = kategorien();
-		System.out.println("hier");
 		
 		// Artiekl aus Datenbank in eine Bean speichern zur Weitergaben an die JSP
 		List<ArtikelBean> alleArtikel = search(suche);
@@ -65,7 +64,6 @@ public class HauptseiteServlet extends HttpServlet {
 	}
 	
 	private List<KategorieBean> kategorien() throws ServletException {
-		System.out.println("inside");
 		
 		List<KategorieBean> kategorien = new ArrayList<KategorieBean>();
 		
@@ -74,15 +72,10 @@ public class HauptseiteServlet extends HttpServlet {
 				Statement stmt = con.createStatement();
 			    ResultSet rs = stmt.executeQuery("SELECT name, id FROM kategorie")) {
 			     
-				while(rs.next()){
-					
-					System.out.println("inside2");
-					
+				while(rs.next()){				
 					//Bei jeder gefundenen Kategorie, neuer Eintrag in Liste
 					KategorieBean kategorieBean = new KategorieBean();			
 					String kategorieName = rs.getString("name");    
-					
-					System.out.println(kategorieName);
 					
 					//�berpr�fung ob Kategorie vom aktuellen Artikel, damit kein doppelter Eintrag in Liste
 					kategorieBean.setKategorieName(kategorieName);
