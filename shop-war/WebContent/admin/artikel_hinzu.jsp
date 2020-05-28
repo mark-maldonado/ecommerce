@@ -31,7 +31,7 @@
 		<fieldset><legend>Artikel Hinzufügen</legend>
 		<div>
 			<label for="artikelBild_id">Bild:</label>
-			<input type="file" name="artikelBild" id="artikelBild_id" accept="image/*">
+			<input class="file" type="file" name="artikelBild" id="artikelBild_id" accept="image/*">
 		</div>
 		<div>
 			<label for="artikelName_id">Name:</label> 
