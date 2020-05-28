@@ -29,7 +29,7 @@
 <main>
 	<form method="get" action="../kategorieloeschenservlet">
 		<fieldset><legend>Kategorie entfernen</legend>
-			<div>
+			<div class="selectdiv">
 				<label for="kategorieName_id">Kategorie:</label>
 				<select name="kategorieName" id="kategorieName_id">
 					<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">

@@ -42,7 +42,7 @@
 				 <label for="artikelName_id">Name:</label>
 				 <input type="text" name="artikelName" id="artikelName_id" value="${artikelBean.name}" required>
 			</div>
-			<div>
+			<div class="selectdiv">
 				<label for="artikelKategorie_id">Kategorie:</label>
 			 	<select name="artikelKategorie" id="artikelKategorie_id" >
 			 		<option value="${artikelBean.kategorieName}" selected>${artikelBean.kategorieName}</option>

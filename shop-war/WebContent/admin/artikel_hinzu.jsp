@@ -37,7 +37,7 @@
 			<label for="artikelName_id">Name:</label> 
 			<input type="text" name="artikelName" id="artikelName_id" placeholder="Artikel Name" required>
 		</div>
-		<div>
+		<div class="selectdiv">
 			<label for="artikelKategorie_id">Kategorie:</label>
 			<select name="artikelKategorie" id="artikelKategorie_id">
 				<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
