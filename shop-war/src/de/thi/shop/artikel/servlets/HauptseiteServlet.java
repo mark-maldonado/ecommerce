@@ -50,6 +50,7 @@ public class HauptseiteServlet extends HttpServlet {
 		
 		// Kategorien aus Datenbank in eine Bean speichern zur Weitergaben an die JSP
 		List<KategorieBean> alleKategorien = kategorien();
+		System.out.println("hier");
 		
 		// Artiekl aus Datenbank in eine Bean speichern zur Weitergaben an die JSP
 		List<ArtikelBean> alleArtikel = search(suche);
