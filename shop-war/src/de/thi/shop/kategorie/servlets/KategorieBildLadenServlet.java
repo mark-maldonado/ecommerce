@@ -41,21 +41,21 @@ public class KategorieBildLadenServlet extends HttpServlet {
 				request.setCharacterEncoding("UTF-8");
 				
 				// empfangenen namen lesen
-				String id = request.getParameter("id");
+				Long id = Long.valueOf(request.getParameter("id"));
 				
 				// DB-Zugriff
 				try (Connection con = ds.getConnection();
 					 PreparedStatement pstmt = con.prepareStatement("SELECT bildK FROM kategorie WHERE id = ?") ) {
 					
 					// Grundgerüst mit 1 Wert befuellen
-					pstmt.setString(1, id);
+					pstmt.setLong(1, id);
 					
 					// Ergebnis zum Befehl speichern
 					try (ResultSet rs = pstmt.executeQuery()) {
 					
 						// gefunden Eintrag lesen und weitergeben
 						if (rs != null && rs.next()) {
-							Blob bild = rs.getBlob("bild");
+							Blob bild = rs.getBlob("bildk");
 							
 							// Bildlänge in Header  schreiben
 							response.reset();
