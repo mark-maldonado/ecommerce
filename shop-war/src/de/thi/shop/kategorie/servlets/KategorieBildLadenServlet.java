@@ -19,37 +19,6 @@ import javax.sql.DataSource;
 /**
  * Servlet implementation class KategorieBildLadenServlet
  */
-@WebServlet("/KategorieBildLadenServlet")
-public class KategorieBildLadenServlet extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-
-	// get Datasource
-	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
-	private DataSource ds;
-	
-	
-    public KategorieBildLadenServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Format der zu lesenden Formulardaten
-				request.setCharacterEncoding("UTF-8");
-				
-				// empfangene id lesen
-				Long id = Long.valueOf(request.getParameter("id"));
-				
-				// DB-Zugriff
-				try (Connection con = ds.getConnection();
-					 PreparedStatement pstmt = con.prepareStatement("SELECT bild FROM kategorie WHERE id = ?") ) {
-					
-					// Grundgerüst mit 1 Wert befüllen
-					pstmt.setLong(1, id);
-=======
 @WebServlet("/kategoriebildladenservlet")
 public class KategorieBildLadenServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
