@@ -47,7 +47,7 @@ public class KategorieBildLadenServlet extends HttpServlet {
 				try (Connection con = ds.getConnection();
 					 PreparedStatement pstmt = con.prepareStatement("SELECT bildK FROM kategorie WHERE name = ?") ) {
 					
-					// Grundgerüst mit 1 Wert befüllen
+					// Grundgerüst mit 1 Wert befuellen
 					pstmt.setString(1, name);
 					
 					// Ergebnis zum Befehl speichern
