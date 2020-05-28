@@ -53,7 +53,7 @@
 					</div>
 
 					<!-- Menge ändern -->
-					<form method="get" action="../einkaufswagenaktualisierenservlet">
+					<form id="aktualisieren" method="get" action="../einkaufswagenaktualisierenservlet">
 						<fieldset><legend>Menge aktualisieren</legend>
 							<div>
 								<!-- Übergabewerte in Form schreiben -->
@@ -70,12 +70,12 @@
 		</section>
 		
 		<!-- Gesamtsumme -->
-		<section>
+		<section class="gesamtsumme">
 			<p><b>Gesamtsumme: </b>${gesamtsumme }</p>
 		</section>
 		
 		<!-- Kaufen Knopf -->
-		<section>
+		<section class="kaufen">
 			<a href="../einkaufswagenuebersichtservlet">Weiter</a>
 		</section>
 		
