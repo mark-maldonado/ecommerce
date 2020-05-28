@@ -28,13 +28,13 @@
 
 <main>
 <!-- Artikel -->
-<section>
+<section class="artikel">
 	<c:forEach var="artikel" items="${alleArtikel}" varStatus="status">
 		<div>
 			<!-- Bild -->
-			<img src="../artikelbildladenservlet?id=${artikel.id }" alt="${artikel.bildName }" height="75" width="75">
+			<img src="../artikelbildladenservlet?id=${artikel.id }" alt="${artikel.bildName }" height="115" width="115">
 			<!-- Information -->
-			<div>
+			<div class="info">
 				<p><b>Name: </b>${artikel.name }</p>
 				<p><b>Kategorie: </b>${artikel.kategorieName }</p>
 				<p><b>Preis: </b>${artikel.preisString }</p>
@@ -45,12 +45,12 @@
 </section>
 
 <!-- Gesamtsumme -->
-<section>
+<section class="gesamtsumme">
 	<p><b>Gesamtsumme: </b>${gesamtsumme }</p>
 </section>
 
 <!-- Kaufen Knopf -->
-<section>
+<section class="kaufen">
 	<a href="../einkaufswagenkaufenservlet">Zahlungspflichtig Kaufen</a>
 </section>
 </main>
