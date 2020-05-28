@@ -37,7 +37,7 @@
 					</c:forEach>
 				</select>
 			</div>
-			<div>
+			<div class="buttons">
 				<button type="submit">Entfernen</button>
 			</div>
 		</fieldset>

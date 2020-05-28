@@ -53,7 +53,7 @@
 					</div>
 
 					<!-- Menge ändern -->
-					<form id="aktualisieren" method="get" action="../einkaufswagenaktualisierenservlet">
+					<form method="get" action="../einkaufswagenaktualisierenservlet">
 						<fieldset><legend>Menge aktualisieren</legend>
 							<div>
 								<!-- Übergabewerte in Form schreiben -->
@@ -61,7 +61,7 @@
 								<!-- Input Wert -->
 							  <label for="menge_id">Menge:</label>
 							  <input type="number" name="menge" id="menge_id" value="${artikel.menge }" min="1">
-							  <button type="submit">Aktualisieren</button>
+							  <button class="yellow" type="submit">Aktualisieren</button>
 							</div>
 						</fieldset>
 					</form>

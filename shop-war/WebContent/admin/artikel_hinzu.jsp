@@ -49,7 +49,7 @@
 			<label for="preis_id">Preis:</label>
 			<input type="number" name="artikelPreis" id="preis_id" placeholder="Artikel Preis in Cents" required>
 		</div>
-		<div>
+		<div class="buttons">
 			<button type="submit">Hinzufügen</button>
 		</div>
 		</fieldset>

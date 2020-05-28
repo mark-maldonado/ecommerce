@@ -20,7 +20,7 @@
 <nav>
 <ul>
 	<li><img src="../img/logo.png" alt="Logobild" width="35" height="42"></li>
-	<li><h1><!-- Name der rechts neben dem Logo steht --></h1></li>
+	<li><h1>Artikel bearbeiten</h1></li>
 	<li><a href="../hauptseiteservlet">zurück</a></li>
 </ul>
 </nav>
@@ -28,9 +28,9 @@
 <!-- Text -->
 <main>
 	<form method="post" action="../artikelaktualisierenservlet" enctype="multipart/form-data">
-	<fieldset><legend>Artikel hinzufügen</legend>			
+	<fieldset><legend>Artikel bearbeiten</legend>			
 			<div>
-				<img src="../artikelbildladenservlet?id=${artikelBean.id}" alt="${artikelBean.bildName}" height="50" width="50">
+				<img src="../artikelbildladenservlet?id=${artikelBean.id}" alt="${artikelBean.bildName}" height="115" width="115">
 				<label for="artikelBeild_id">Bild:</label>
 				<input class="bild" type="file" name="artikelBild" id="artikelBild_id" accept="image/*">
 			</div>
@@ -55,7 +55,7 @@
 				<label for="artikelPreis_id">Preis:</label>
 				<input type="number" name="artikelPreis" id="artikelPreis_id" value="${artikelBean.preis}" required>
 			</div>
-			<div>
+			<div class="buttons">
 				<a href="../artikelentfernenservlet?artikelId=${artikelBean.id}">Entfernen</a>
 				<button type="submit" >Aktualisieren</button>
 				

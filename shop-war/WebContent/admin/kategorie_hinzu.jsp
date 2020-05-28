@@ -31,7 +31,7 @@
 				<label for="kategorieId">Kategorie-Name:</label>
 				<input type="text" name="kategorieName" id="kategorieId" placeholder="Kategorie-Name" required></th>
 			</div>
-			<div>
+			<div class="buttons">
 				<button type="submit">Hinzufügen</button>
 			</div>
 		</fieldset>

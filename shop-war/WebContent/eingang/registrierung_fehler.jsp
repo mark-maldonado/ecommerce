@@ -24,9 +24,8 @@
 
 <!-- Text -->
 <main>
-	<h1>Registrierungsfehler</h1>
 	<h2>Leider war die Registrierung nicht möglich. Die angegebene E-Mail Adresse ist bereits registriert.</h2>
-	<div>
+	<div class="buttons center">
 		 <a href="login.html">Login</a>
 		 <a href="registrierung.html">Registrieren</a>
 	</div>
