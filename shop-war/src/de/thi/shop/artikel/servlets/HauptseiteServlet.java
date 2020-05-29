@@ -35,7 +35,7 @@ public class HauptseiteServlet extends HttpServlet {
 		// Test ob user angemeldet ist
 		// Session Bean erhalten		
 		try {
-			if (request.getSession(false).getAttribute("userBean") == null) {
+			if (request.getSession(false).getAttribute("userBean") == null || request.getSession(false).getAttribute("userBean").equals("")) {
 				final RequestDispatcher dispatcher = request.getRequestDispatcher("/eingang/login.html");
 				dispatcher.forward(request, response);
 			}

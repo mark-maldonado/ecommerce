@@ -26,11 +26,11 @@ public class AbmeldenServlet extends HttpServlet {
 	private DataSource ds;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		
 		// eingeloggten user aus session löschen
 		HttpSession session = request.getSession();
-		session.setAttribute("userBean", null);
+		session.removeAttribute("userBean");
 		
 		// zur login Seite weiterleiten
 		final RequestDispatcher disp = request.getRequestDispatcher("eingang/login.html");
