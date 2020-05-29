@@ -30,10 +30,9 @@ public class AbmeldenServlet extends HttpServlet {
 		
 		// eingeloggten user aus session löschen
 		HttpSession session = request.getSession();
-		session.removeAttribute("userBean");
+		session.invalidate();
 		
 		// zur login Seite weiterleiten
-		final RequestDispatcher disp = request.getRequestDispatcher("eingang/login.html");
-		disp.forward(request, response);
+		response.sendRedirect("eingang/login.html");
 	}
 }

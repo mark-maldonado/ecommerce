@@ -1,13 +1,13 @@
 @font-face {
 	font-family: sf;
-	src: url("../font/font.otf") format("otf");
+	src: url("../fonts/SF-Pro-Display-Medium.otf") format("opentype"), url("../fonts/SF-Pro-Display-Medium.ttf") format("truetype");
 }
 
 * {
 	-webkit-box-sizing: border-box;
 	-moz-box-izing: border-box;
 	box-sizing: border-box;
-	font-family: "SF Pro Display", "Times New Roman", Times, serif;
+	font-family: "sf", "Times New Roman", Times, serif;
 }
 
 *::selection {

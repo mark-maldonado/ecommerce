@@ -35,12 +35,20 @@ public class HauptseiteServlet extends HttpServlet {
 		// Test ob user angemeldet ist
 		// Session Bean erhalten		
 		try {
+			System.out.println("try");
 			if (request.getSession(false).getAttribute("userBean") == null || request.getSession(false).getAttribute("userBean").equals("")) {
+				System.out.println("if");
 				final RequestDispatcher dispatcher = request.getRequestDispatcher("/eingang/login.html");
 				dispatcher.forward(request, response);
 			}
+			else {
+				System.out.println(request.getSession(false).getAttribute("userBean"));
+			}
 		} 
 		catch (Exception ex) {
+			System.out.println("exception");
+			final RequestDispatcher dispatcher = request.getRequestDispatcher("/eingang/login.html");
+			dispatcher.forward(request, response);
 		}
 		
 		// Format der zu lesenden Formulardaten
