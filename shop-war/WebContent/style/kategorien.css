@@ -6,19 +6,20 @@
 	padding: 5px;
 	display: flex;
 	justify-content: center;
+	padding: 0;
 }
 
 #kategorien ul {
 	list-style-type: none;
 	margin: 0;
-	height: 40px;
 }
 
 #kategorien ul li {
 	position: relative;
 	float: left;
 	overflow: visible;
-	margin: 10px;
+	margin: 20px 10px 0 10px;
+	height: 40px;
 }
 
 #kategorien ul li img {
