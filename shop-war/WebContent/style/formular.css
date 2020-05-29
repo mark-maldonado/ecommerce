@@ -13,8 +13,8 @@ form fieldset {
 form fieldset legend {
 	font-size: 1.35rem;
 	font-weight: medium;
-	margin-bottom: 20px;
-	padding-top: 15px;
+	margin-bottom: 5px;
+	padding-top: 17px;
 }
 
 /* label + input Block */
@@ -28,11 +28,22 @@ form fieldset label {
 	font-weight: medium;
 }
 
+/* Suche in Hauptseite */
+#suchfunktion {
+	width: 20rem;
+	margin: auto;
+}
+
+#suchfunktion form fieldset {
+	padding-bottom: 20px;
+}
+
 #suchfunktion form fieldset label {
 	min-width: 0;
 }
 
 form fieldset input {
+	width: 10rem;
 	padding: 0 7px;
 	border: 0;
 	border-bottom: 2px solid black;
@@ -43,7 +54,7 @@ form fieldset input {
 /* input bild */
 .bild {
 	display: inline-block;
-	max-width: 200px;
+	width: 300px;
 	border: none;
 }
 
@@ -55,6 +66,7 @@ form fieldset select {
 	border-bottom: 2px solid black;
 	height: 1.7rem;
 	font-weight: regular;
+	width: 10rem;
 }
 
 /* Buttons */
