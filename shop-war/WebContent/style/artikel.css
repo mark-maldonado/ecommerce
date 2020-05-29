@@ -15,7 +15,6 @@
 }
 
 .artikel img {
-	margin-top: 20px;
 	border-radius: 5px;
 	position: absolute;
 }
@@ -53,7 +52,7 @@
 }
 
 .artikel form input {
-	width: 2rem;
+	width: 4rem;
 	background-color: #f7f7f7;
 }
 

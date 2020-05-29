@@ -36,3 +36,8 @@
 	background-color: transparent;
 	color: black;
 }
+
+#kategorien ul li a:hover {
+	background-color: black;
+	color: white;
+}
