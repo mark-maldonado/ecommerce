@@ -18,6 +18,7 @@ import javax.sql.DataSource;
 
 import de.thi.shop.einkaufswagen.beans.EinkaufswagenBean;
 import de.thi.shop.user.beans.UserBean;
+import de.thi.shop.user.servlets.CheckAngemeldet;
 
 @WebServlet("/einkaufswagenaktualisierenservlet")
 public class EinkaufswagenAktualisierenServlet extends HttpServlet {
@@ -30,6 +31,9 @@ public class EinkaufswagenAktualisierenServlet extends HttpServlet {
 	private Long artikelVorhandenId = null;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Test ob User angemeldet ist
+		CheckAngemeldet.checkAngemeldet(request, response);
+						
 		// Format der zu lesenden Formulardaten
 		request.setCharacterEncoding("UTF-8");
 		

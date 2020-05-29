@@ -4,7 +4,6 @@ package de.thi.shop.artikel.servlets;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -20,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 import de.thi.shop.kategorie.beans.KategorieBean;
+import de.thi.shop.user.servlets.CheckAngemeldet;
 
 /**
  * Servlet implementation class ArtikelHinzuServlet
@@ -43,7 +43,9 @@ public class ArtikelHinzuServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// Test ob User angemeldet ist
+		CheckAngemeldet.checkAngemeldet(request, response);
+						
 		request.setCharacterEncoding("UTF-8");
 		
 		List<KategorieBean> kategorien = new ArrayList<KategorieBean>();

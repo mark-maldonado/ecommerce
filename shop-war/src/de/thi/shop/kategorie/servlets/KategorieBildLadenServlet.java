@@ -16,6 +16,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
+import de.thi.shop.user.servlets.CheckAngemeldet;
+
 /**
  * Servlet implementation class KategorieBildLadenServlet
  */
@@ -37,6 +39,9 @@ public class KategorieBildLadenServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Test ob User angemeldet ist
+		CheckAngemeldet.checkAngemeldet(request, response);
+		
 		// Format der zu lesenden Formulardaten
 				request.setCharacterEncoding("UTF-8");
 				

@@ -21,6 +21,7 @@ import javax.sql.DataSource;
 
 import de.thi.shop.artikel.beans.ArtikelBean;
 import de.thi.shop.kategorie.beans.KategorieBean;
+import de.thi.shop.user.servlets.CheckAngemeldet;
 
 @WebServlet("/hauptseiteservlet")
 public class HauptseiteServlet extends HttpServlet {
@@ -32,24 +33,8 @@ public class HauptseiteServlet extends HttpServlet {
 	
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// Test ob user angemeldet ist
-		// Session Bean erhalten		
-		try {
-			System.out.println("try");
-			if (request.getSession(false).getAttribute("userBean") == null || request.getSession(false).getAttribute("userBean").equals("")) {
-				System.out.println("if");
-				final RequestDispatcher dispatcher = request.getRequestDispatcher("/eingang/login.html");
-				dispatcher.forward(request, response);
-			}
-			else {
-				System.out.println(request.getSession(false).getAttribute("userBean"));
-			}
-		} 
-		catch (Exception ex) {
-			System.out.println("exception");
-			final RequestDispatcher dispatcher = request.getRequestDispatcher("/eingang/login.html");
-			dispatcher.forward(request, response);
-		}
+		// Test ob User angemeldet ist
+		CheckAngemeldet.checkAngemeldet(request, response);
 		
 		// Format der zu lesenden Formulardaten
 		request.setCharacterEncoding("UTF-8");

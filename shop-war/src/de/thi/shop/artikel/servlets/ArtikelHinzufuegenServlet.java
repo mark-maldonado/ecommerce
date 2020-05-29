@@ -20,6 +20,7 @@ import javax.servlet.http.Part;
 import javax.sql.DataSource;
 
 import de.thi.shop.artikel.beans.ArtikelBean;
+import de.thi.shop.user.servlets.CheckAngemeldet;
 
 
 /**
@@ -45,7 +46,9 @@ public class ArtikelHinzufuegenServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// Test ob User angemeldet ist
+		CheckAngemeldet.checkAngemeldet(request, response);
+				
 		request.setCharacterEncoding("UTF-8");
 		
 		ArtikelBean artikelBean = new ArtikelBean();

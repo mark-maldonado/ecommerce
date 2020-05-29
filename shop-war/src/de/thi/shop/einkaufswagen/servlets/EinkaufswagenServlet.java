@@ -22,6 +22,7 @@ import javax.sql.DataSource;
 
 import de.thi.shop.einkaufswagen.beans.EinkaufswagenBean;
 import de.thi.shop.user.beans.UserBean;
+import de.thi.shop.user.servlets.CheckAngemeldet;
 
 @WebServlet("/einkaufswagenservlet")
 public class EinkaufswagenServlet extends HttpServlet {
@@ -32,21 +33,13 @@ public class EinkaufswagenServlet extends HttpServlet {
 	private DataSource ds;
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Test ob User angemeldet ist
+		CheckAngemeldet.checkAngemeldet(request, response);
+						
 		// userBean erstellen
 		UserBean userBean = new UserBean();
-		
-		// Test ob user angemeldet ist
-		// Session Bean erhalten
-		try {
-			if (request.getSession(false).getAttribute("userBean") == null || request.getSession(false).getAttribute("userBean").equals("")) {
-				final RequestDispatcher dispatcher = request.getRequestDispatcher("/eingang/login.html");
-				dispatcher.forward(request, response);
-			} else {
-				userBean = (UserBean) request.getSession().getAttribute("userBean");
-			}
-		} 
-		catch(Exception Ex) {
-		}
+		// Userbean von Seesion lesen
+		userBean = (UserBean) request.getSession().getAttribute("userBean");
 
 		// Format der zu lesenden Formulardaten
 		request.setCharacterEncoding("UTF-8");

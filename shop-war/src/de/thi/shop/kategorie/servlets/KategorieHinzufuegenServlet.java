@@ -9,7 +9,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import javax.annotation.Resource;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +19,7 @@ import javax.servlet.http.Part;
 import javax.sql.DataSource;
 
 import de.thi.shop.kategorie.beans.KategorieBean;
+import de.thi.shop.user.servlets.CheckAngemeldet;
 
 /**
  * Servlet implementation class KategorieHinzufuegenServlet
@@ -44,6 +44,8 @@ public class KategorieHinzufuegenServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Test ob User angemeldet ist
+		CheckAngemeldet.checkAngemeldet(request, response);
 		
 		request.setCharacterEncoding("UTF-8");
 		
