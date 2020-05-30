@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="icon" type="image/png" href="img/logo_icon.png">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Willkommen</title>
 </head>
