@@ -26,7 +26,7 @@
 		<fieldset><legend>Kategorie hinzufügen</legend>
 			<div>
 				<label for="kategorieId">Kategorie-Name:</label>
-				<input type="text" name="kategorieName" id="kategorieId" placeholder="Kategorie-Name" required></th>
+				<input type="text" name="kategorieName" id="kategorieId" placeholder="Kategorie-Name" required>
 			</div>
 			<div>
 				<label for="icon">Kategorie-Icon:</label>
