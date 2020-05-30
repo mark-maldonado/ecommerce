@@ -8,10 +8,11 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<base href="/shop-war/eingang/registrierung.html" />
 	<link rel="stylesheet" type="text/css" href="../style/style.css" />
+	<script type="text/javascript" src="../script/registrierung.js"></script>
 	<title>Registrierung</title>
 </head>
-<body>
 
+<body>
 <!-- Logo -->
 <nav>
 <ul>
@@ -22,7 +23,7 @@
 
 <!-- Registrieung Formular -->
 <main>
-	<form method="post" action="../registrierenservlet">
+	<form id="form_registrierung" method="post" action="../registrierenservlet">
 		<fieldset><legend>Registrierung</legend>
 			<div>
 				<label for="mail_id">E-Mail:</label>
@@ -56,6 +57,11 @@
 				 <button class="green" name="submit" type="submit">Absenden</button>
 				 <button class="yellow" name="reset" type="reset">Reset</button>
 				 <a href="login.html">zurück zum Login</a>
+			</div>
+			<div>
+				<!-- Fehlermeldungen -->
+				<noscript>Bitte aktivieren Sie JavaScript</noscript>
+				<p id="fehlermeldung"></p>
 			</div>
 		</fieldset>
 	</form>

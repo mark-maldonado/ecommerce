@@ -51,6 +51,19 @@ form fieldset input {
 	font-weight: regular;
 }
 
+/* Fehlermeldung */
+noscript {
+	color: red;
+}
+
+.fehlerinput {
+	border-color: red;
+}	
+
+#fehlermeldung {
+	color: red;
+}
+
 /* input bild */
 .bild {
 	display: inline-block;
