@@ -38,7 +38,7 @@ public class EinkaufswagenServlet extends HttpServlet {
 						
 		// userBean erstellen
 		UserBean userBean = new UserBean();
-		// Userbean von Seesion lesen
+		// userBean von Seesion lesen
 		userBean = (UserBean) request.getSession().getAttribute("userBean");
 
 		// Format der zu lesenden Formulardaten
