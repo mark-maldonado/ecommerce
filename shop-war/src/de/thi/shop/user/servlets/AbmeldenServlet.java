@@ -5,7 +5,6 @@ package de.thi.shop.user.servlets;
 import java.io.IOException;
 
 import javax.annotation.Resource;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,6 +25,9 @@ public class AbmeldenServlet extends HttpServlet {
 	private DataSource ds;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// Test ob User angemeldet ist
+		CheckAngemeldet.checkAngemeldet(request, response);
+		
 		request.setCharacterEncoding("UTF-8");
 		
 		// eingeloggten user aus session löschen
