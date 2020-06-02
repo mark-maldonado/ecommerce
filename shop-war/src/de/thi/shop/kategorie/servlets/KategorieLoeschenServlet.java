@@ -5,6 +5,7 @@ package de.thi.shop.kategorie.servlets;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
@@ -48,17 +49,49 @@ public class KategorieLoeschenServlet extends HttpServlet {
 		KategorieBean kategorieBean = new KategorieBean();
 		kategorieBean.setKategorieName(request.getParameter("kategorieName"));
 		
-			try(Connection con = ds.getConnection();
-				PreparedStatement pstmt = con.prepareStatement("DELETE FROM kategorie WHERE name = ?")) {
-			
+		
+		//KategorieID holen
+		try(Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("SELECT id FROM kategorie WHERE name = ?")) {
+		
 				pstmt.setString(1, kategorieBean.getKategorieName());
-				pstmt.executeUpdate();
+				ResultSet rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+				kategorieBean.setId(rs.getLong("id"));
+				}
+				
+		} catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		}
+		
+		
+		//Prüfen ob es Artikel in der Kategorie gibt
+		try(Connection con = ds.getConnection();
+				PreparedStatement pstmt = con.prepareStatement("SELECT * FROM artikel WHERE idKategorie = ?")) {
 			
-			}	catch (Exception ex) {
-				throw new ServletException(ex.getMessage());
-		 		}
-	
-		response.sendRedirect("admin/kategorie_entfernen_erfolgreich.jsp");
+				pstmt.setLong(1, kategorieBean.getId());
+				ResultSet rs = pstmt.executeQuery();
+				
+				if(rs.next()) {
+					response.sendRedirect("admin/kategorie_entfernen_fehler.jsp");
+				}
+				else {
+					//Löschen der Kategorie, da keine Artikel in Kategorie
+					try(Connection con1 = ds.getConnection();
+							PreparedStatement pstmt1 = con.prepareStatement("DELETE FROM kategorie WHERE name = ?")) {
+								pstmt1.setString(1, kategorieBean.getKategorieName());
+								pstmt1.executeUpdate();
+							} catch (Exception ex) {
+								throw new ServletException(ex.getMessage());
+							}
+					response.sendRedirect("admin/kategorie_entfernen_erfolgreich.jsp");
+					}
+		
+		}	catch (Exception ex) {
+			throw new ServletException(ex.getMessage());
+		 	}
+		
 	}
 
 }
