@@ -1,4 +1,4 @@
-// CREATED BY MARK MALDONADO //
+// CREATED BY SEYIT ARAR //
 "use sctrict";
 
 // Wenn DOM Elemente geladen sind //
