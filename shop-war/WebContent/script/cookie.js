@@ -1,3 +1,5 @@
+// CREATED BY SEYIT ARAR //
+
 "use sctrict";
 
 //Wenn DOM Elemente geladen sind //  https://stackoverflow.com/questions/4603289/how-to-detect-that-javascript-and-or-cookies-are-disabled
