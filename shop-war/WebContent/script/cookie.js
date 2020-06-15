@@ -2,7 +2,9 @@
 
 "use sctrict";
 
-//Wenn DOM Elemente geladen sind //  https://stackoverflow.com/questions/4603289/how-to-detect-that-javascript-and-or-cookies-are-disabled
+//Quelle: https://stackoverflow.com/questions/4603289/how-to-detect-that-javascript-and-or-cookies-are-disabled
+
+//Wenn DOM Elemente geladen sind //
 document.addEventListener("DOMContentLoaded", checkCookie);
 
 function checkCookie(){
