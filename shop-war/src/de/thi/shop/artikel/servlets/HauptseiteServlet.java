@@ -38,12 +38,14 @@ public class HauptseiteServlet extends HttpServlet {
 		
 		// Format der zu lesenden Formulardaten
 		request.setCharacterEncoding("UTF-8");
+		// Such-String lesen
+		String suche = request.getParameter("suche");
 		
 		// Kategorien aus Datenbank in eine Bean speichern zur Weitergaben an die JSP
 		List<KategorieBean> alleKategorien = kategorien();
 		
 		// Artiekl aus Datenbank in eine Bean speichern zur Weitergaben an die JSP
-		List<ArtikelBean> alleArtikel = search();
+		List<ArtikelBean> alleArtikel = search(suche);
 		
 		// Scope "Request" (request da Seite nur aufgebaut werden muss)
 		request.setAttribute("alleKategorien", alleKategorien);
@@ -80,17 +82,22 @@ public class HauptseiteServlet extends HttpServlet {
 		return kategorien;
 	}
 	
-	private List<ArtikelBean> search() throws ServletException {
+	private List<ArtikelBean> search(String suche) throws ServletException {
 		
+		// lastname wenn leer alle Anzeigen sonst, lastname als Zwischenwert suchen
+		suche = (suche == null || suche == "") ? "%" : "%" + suche + "%";
 		//zu übergebene Liste von Bohne erstellen
 		List<ArtikelBean> alleArtikel = new ArrayList<ArtikelBean>();
 		
 		// DB-Zugriff
 		try (Connection con = ds.getConnection();
 			// Grundgerüst erstellen
-			 Statement stmt = con.createStatement()) {
+			 PreparedStatement pstmt = con.prepareStatement("SELECT artikel.id, artikel.name, preis, bildName, kategorie.id AS kategroieId, kategorie.name AS kategorieName FROM artikel INNER JOIN kategorie ON (artikel.idKategorie = kategorie.id) WHERE artikel.name LIKE ? OR kategorie.name LIKE ? ORDER BY artikel.name")) {
 
-			try (ResultSet rs = stmt.executeQuery("SELECT artikel.id, artikel.name, preis, bildName, kategorie.id AS kategroieId, kategorie.name AS kategorieName FROM artikel INNER JOIN kategorie ON (artikel.idKategorie = kategorie.id)")) {
+			//Grundgerüst mit 1 Wert füllen
+			pstmt.setString(1, suche);
+			pstmt.setString(2, suche);
+			try (ResultSet rs = pstmt.executeQuery()) {
 			
 				//solange Werte vorhanden (von den Gesuchten)
 				while (rs.next()) {
