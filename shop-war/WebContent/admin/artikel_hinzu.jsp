@@ -44,7 +44,7 @@
 		</div>
 		<div>
 			<label for="preis_id">Preis:</label>
-			<input type="number" name="artikelPreis" id="preis_id" placeholder="Artikel Preis in Cents" required>
+			<input type="number" step="0.01" name="artikelPreis" id="preis_id" placeholder="Preis in Euro" required>
 		</div>
 		<div class="buttons">
 			<button type="submit">Hinzufügen</button>

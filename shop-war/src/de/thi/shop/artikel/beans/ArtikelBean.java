@@ -10,6 +10,7 @@ public class ArtikelBean implements Serializable {
 	private Long id;
 	private String name;
 	private int preis;
+	private float preisFloat;
 	private String preisString;
 	private byte[] bild;
 	private String bildName;
@@ -50,6 +51,14 @@ public class ArtikelBean implements Serializable {
 
 	public void setPreis(int preis) {
 		this.preis = preis;
+	}
+	
+	public float getPreisFloat() {
+		return preisFloat;
+	}
+	
+	public void setPreisFloat(float preisFloat) {
+		this.preisFloat = preisFloat;
 	}
 	
 	public String getPreisString() {

@@ -55,7 +55,7 @@ public class ArtikelAktualisierenServlet extends HttpServlet {
 		//Attribute in neu erstellte ArtikelBean schreiben
 		artikelBean.setName(request.getParameter("artikelName"));
 		artikelBean.setKategorieName(request.getParameter("artikelKategorie"));
-		artikelBean.setPreis(Integer.parseInt(request.getParameter("artikelPreis")));
+		artikelBean.setPreis(Math.round(100f*Float.parseFloat(request.getParameter("artikelPreis"))));
 		artikelBean.setId(Long.parseLong(request.getParameter("artikelId")));
 		
 		//Handling f�r das Bild, das hochgeladen wurde

@@ -54,14 +54,14 @@ public class ArtikelBearbeitenServlet extends HttpServlet {
 		//Attribute holen
 		String artikelName = request.getParameter("name");
 		Long artikelId = Long.valueOf(request.getParameter("id"));
-		int artikelPreis = Integer.parseInt(request.getParameter("preis"));
+		float artikelPreis = Integer.parseInt(request.getParameter("preis"))/100f;
 		String kategorieName = request.getParameter("kategorie");
 		
 		ArtikelBean artikelBean = new ArtikelBean();
 		
 		//Attribute in die ArtikelBean
 		artikelBean.setName(artikelName);
-		artikelBean.setPreis(artikelPreis);
+		artikelBean.setPreisFloat(artikelPreis);
 		artikelBean.setId(artikelId);
 		artikelBean.setKategorieName(kategorieName);
 		

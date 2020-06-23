@@ -58,7 +58,7 @@ public class ArtikelHinzufuegenServlet extends HttpServlet {
 		boolean artikelVorhanden = false;
 	
 		artikelBean.setName(request.getParameter("artikelName"));
-		artikelBean.setPreis(Integer.parseInt(request.getParameter("artikelPreis")));
+		artikelBean.setPreis(Math.round(100f*Float.parseFloat(request.getParameter("artikelPreis"))));
 		artikelBean.setKategorieName(request.getParameter("artikelKategorie"));
 		
 		

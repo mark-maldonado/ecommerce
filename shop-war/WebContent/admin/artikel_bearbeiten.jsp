@@ -50,7 +50,7 @@
 			</div>
 			<div>
 				<label for="artikelPreis_id">Preis:</label>
-				<input type="number" name="artikelPreis" id="artikelPreis_id" value="${artikelBean.preis}" required>
+				<input type="number" step="0.01" name="artikelPreis" id="artikelPreis_id" value="${artikelBean.preisFloat}" required>
 			</div>
 			<div class="buttons">
 				<a href="../artikelentfernenservlet?artikelId=${artikelBean.id}">Entfernen</a>
