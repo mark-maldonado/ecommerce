@@ -17,8 +17,8 @@
 <ul>
 	<li><img src="../img/logo.png" alt="Logobild" width="35" height="42"></li>
 	<li><h1>Einkaufswagen Übersicht</h1></li>
-	<li><a href="../abmeldenservlet">abmelden</a></li>
-	<li><a href="../einkaufswagenservlet">zurück zum Einkaufswagen</a></li>
+	<li><a href="../abmeldenservlet">Abmelden</a></li>
+	<li><a href="../einkaufswagenservlet">Zurück zum Einkaufswagen</a></li>
 </ul>
 </nav>
 

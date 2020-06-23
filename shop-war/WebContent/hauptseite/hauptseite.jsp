@@ -18,8 +18,8 @@
 <ul>
 	<li><img src="../img/logo.png" alt="Logobild" width="35" height="42"></li>
 	<li><h1>Hauptseite</h1></li>
-	<li><a href="../abmeldenservlet">abmelden</a></li>
-	<li><a href="../einkaufswagenservlet">zum Einkaufswagen</a></li>
+	<li><a href="../abmeldenservlet">Abmelden</a></li>
+	<li><a href="../einkaufswagenservlet">Zum Einkaufswagen</a></li>
 	
 	<!-- testen ob Admin angemeldet ist -->
 	<c:if test="${sessionScope.isAdmin }">
