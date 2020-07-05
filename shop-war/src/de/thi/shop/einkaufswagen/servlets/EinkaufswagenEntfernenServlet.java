@@ -59,6 +59,6 @@ public class EinkaufswagenEntfernenServlet extends HttpServlet {
 		}
 		
 		// Redirect weil Daten in die Datenbank geschrieben wird
-		response.sendRedirect("einkaufswagen/einkaufswagen_entfernen_erfolgreich.jsp");
+		response.sendRedirect("einkaufswagenservlet");
 	}
 }	
