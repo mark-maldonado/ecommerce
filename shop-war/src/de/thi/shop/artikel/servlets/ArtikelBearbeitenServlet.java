@@ -20,6 +20,7 @@ import javax.sql.DataSource;
 
 import de.thi.shop.artikel.beans.ArtikelBean;
 import de.thi.shop.kategorie.beans.KategorieBean;
+import de.thi.shop.user.servlets.CheckAdmin;
 import de.thi.shop.user.servlets.CheckAngemeldet;
 
 
@@ -48,6 +49,9 @@ public class ArtikelBearbeitenServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Test ob User angemeldet ist
 		CheckAngemeldet.checkAngemeldet(request, response);
+		
+		// Test ob User Admin ist
+		CheckAdmin.checkAdmin(request, response);
 		
 		request.setCharacterEncoding("UTF-8");
 	
