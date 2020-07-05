@@ -34,6 +34,10 @@
 <!-- Kategorien -->
 <section id="kategorien">
 	<ul>
+		<li>
+			<a href="../hauptseiteservlet?suche=">
+			Alle</a>
+		</li>
 		<c:forEach var="kategorie" items="${alleKategorien}" varStatus="status">
 			<li>
 				<a href="../hauptseiteservlet?suche=${kategorie.kategorieName}">
