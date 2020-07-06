@@ -57,6 +57,9 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 	}
 	
 	private void persist(EinkaufswagenBean form) throws ServletException {
+		// Wert zurücksetzen
+		artikelVorhandenId = null;
+		
 		// 1 ÜBERPRÜFEN OB ARTIKEL IM EINKAUFSWAGEN BEREITS VORHANDEN
 		try (Connection con = ds.getConnection();
 			PreparedStatement pstmt = con.prepareStatement(
@@ -100,7 +103,7 @@ public class EinkaufswagenHinzuServlet extends HttpServlet {
 		}
 				
 		// 3 ARTIKEL IN EINKAUFSWAGEN POSITION SCHREIBEN
-		else {
+		else {		
 			// Namen der Spalten, die die Keys automatisch generieren
 			String[] generatedKeys = new String[] {"id"};
 			
