@@ -75,7 +75,7 @@ public class ArtikelHinzufuegenServlet extends HttpServlet {
 					if(rs.next()) {
 						artikelVorhanden = true;
 						artikelBean.setId(rs.getLong("id"));
-						response.sendRedirect("/admin/artikel_hinzu_fehler.jsp");
+						response.sendRedirect("admin/artikel_hinzu_fehler.jsp");
 					}
 				}
 		}catch(Exception ex) {
