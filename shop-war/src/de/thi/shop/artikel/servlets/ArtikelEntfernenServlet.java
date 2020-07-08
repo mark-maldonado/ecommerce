@@ -27,17 +27,11 @@ public class ArtikelEntfernenServlet extends HttpServlet {
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ArtikelEntfernenServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Test ob User angemeldet ist
 		CheckAngemeldet.checkAngemeldet(request, response);

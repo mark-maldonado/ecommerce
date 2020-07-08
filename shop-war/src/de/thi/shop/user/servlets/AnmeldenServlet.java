@@ -29,17 +29,11 @@ public class AnmeldenServlet extends HttpServlet {
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public AnmeldenServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		request.setCharacterEncoding("UTF-8");

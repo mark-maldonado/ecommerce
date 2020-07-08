@@ -1,3 +1,5 @@
+// CREATED BY MARK MALDONADO
+
 package de.thi.shop.user.servlets;
 
 import java.io.IOException;
@@ -12,14 +14,10 @@ public class CheckAngemeldet {
 		// Session Bean erhalten		
 		try {
 			if (request.getSession(false).getAttribute("userBean") == null || request.getSession(false).getAttribute("userBean").equals("")) {
-//				final RequestDispatcher dispatcher = request.getRequestDispatcher("/eingang/login.html");
-//				dispatcher.forward(request, response);
 				response.sendRedirect("eingang/login.html");
 			}
 		} 
 		catch (Exception ex) {
-//			final RequestDispatcher dispatcher = request.getRequestDispatcher("/eingang/login.html");
-//			dispatcher.forward(request, response);
 			response.sendRedirect("eingang/login.html");
 		}
 	}

@@ -23,8 +23,6 @@ import de.thi.shop.kategorie.beans.KategorieBean;
 import de.thi.shop.user.servlets.CheckAdmin;
 import de.thi.shop.user.servlets.CheckAngemeldet;
 
-
-
 /**
  * Servlet implementation class ArtikelBearbeitenServlet
  */
@@ -35,17 +33,11 @@ public class ArtikelBearbeitenServlet extends HttpServlet {
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public ArtikelBearbeitenServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Test ob User angemeldet ist
 		CheckAngemeldet.checkAngemeldet(request, response);
@@ -80,10 +72,6 @@ public class ArtikelBearbeitenServlet extends HttpServlet {
 		disp.forward(request, response);
 		
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 		
 	private List<KategorieBean> kategorienHolen(ArtikelBean artikelBean) throws ServletException
 	{

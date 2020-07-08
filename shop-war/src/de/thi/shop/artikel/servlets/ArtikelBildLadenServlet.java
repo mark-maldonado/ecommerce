@@ -28,7 +28,6 @@ public class ArtikelBildLadenServlet extends HttpServlet {
 	@Resource(lookup="java:jboss/datasources/MySqlThidbDS")
 	private DataSource ds;
 	
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Test ob User angemeldet ist
 		CheckAngemeldet.checkAngemeldet(request, response);

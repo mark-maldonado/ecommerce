@@ -35,9 +35,6 @@ public class KategorieBildLadenServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// Test ob User angemeldet ist
 		CheckAngemeldet.checkAngemeldet(request, response);
