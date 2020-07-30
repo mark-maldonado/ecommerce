@@ -93,7 +93,7 @@ public class ArtikelAktualisierenServlet extends HttpServlet {
 			String trimmed = artikelBildName.substring(0, artikelBildName.lastIndexOf("."));
 			artikelBean.setBildName(trimmed);
 				
-			//Wenn nichts hochgeladen, wird das aktuelle Bild von der Datenbank geholt
+			//Falls hochgeladene Datei fehlerhaft ist, wird das aktuelle Bild von der Datenbank geholt
 			InputStream original = null;
 			try(Connection con = ds.getConnection();
 					PreparedStatement pstmt = con.prepareStatement("SELECT bild FROM artikel WHERE id = ?")){
@@ -107,10 +107,12 @@ public class ArtikelAktualisierenServlet extends HttpServlet {
 					}
 			} catch (Exception ex) {
 				throw new ServletException(ex.getMessage());
-				}
+			}
 			
+			//Test ob hochgeladener Strem lesbar ist
 			InputStreamReader reader = new InputStreamReader(inputStream);
 				if(!(reader.ready())){
+					//Falls nicht Bild aus Datenbank auswählen
 					inputStream = original;
 			}
 				

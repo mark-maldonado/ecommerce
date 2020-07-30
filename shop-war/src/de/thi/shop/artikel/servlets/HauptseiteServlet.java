@@ -84,7 +84,7 @@ public class HauptseiteServlet extends HttpServlet {
 	
 	private List<ArtikelBean> search(String suche) throws ServletException {
 		
-		// lastname wenn leer alle Anzeigen sonst, lastname als Zwischenwert suchen
+		// suche wenn leer alle Anzeigen sonst, suche als Zwischenwert suchen
 		suche = (suche == null || suche == "") ? "%" : "%" + suche + "%";
 		//zu übergebene Liste von Bohne erstellen
 		List<ArtikelBean> alleArtikel = new ArrayList<ArtikelBean>();

@@ -33,7 +33,7 @@
 			</div>
 			<div>
 				<label for="artikelId_id">ID:</label>
-				<input type="number" name="artikelId"  id ="artikelId_id" value="${artikelBean.id}" readonly>
+				<input type="number" name="artikelId"  id="artikelId_id" value="${artikelBean.id}" readonly>
 			</div>
 			<div>
 				 <label for="artikelName_id">Name:</label>
@@ -43,9 +43,9 @@
 				<label for="artikelKategorie_id">Kategorie:</label>
 			 	<select name="artikelKategorie" id="artikelKategorie_id" >
 			 		<option value="${artikelBean.kategorieName}" selected>${artikelBean.kategorieName}</option>
-						<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
-							<option value="${currentKategorie.kategorieName}">${currentKategorie.kategorieName}</option>
-						</c:forEach>
+					<c:forEach var="currentKategorie" items="${kategorien}" varStatus="status">
+						<option value="${currentKategorie.kategorieName}">${currentKategorie.kategorieName}</option>
+					</c:forEach>
 				</select>
 			</div>
 			<div>
@@ -54,8 +54,7 @@
 			</div>
 			<div class="buttons">
 				<a href="../artikelentfernenservlet?artikelId=${artikelBean.id}">Entfernen</a>
-				<button type="submit" >Aktualisieren</button>
-				
+				<button type="submit">Aktualisieren</button>
 			</div>	 
 		</fieldset>
 	</form>
